@@ -965,6 +965,7 @@
     <None Include="Unsupported\Functions\Formatter_FormatString.sql" />
     <None Include="Unsupported\Functions\Json_ReadNested.sql" />
     <None Include="Unsupported\Functions\MessagePatternStepType_Confirm.sql" />
+    <None Include="Migrations\1.1.0-Changes\001_20201217-2330_Amirhossein.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pre-Deployment\01_Initialize_Deployment.sql" />
