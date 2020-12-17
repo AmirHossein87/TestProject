@@ -1,0 +1,17 @@
+IF OBJECT_ID('[tSQLt].[Private_GetQuotedFullName]') IS NOT NULL
+	DROP FUNCTION [tSQLt].[Private_GetQuotedFullName];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [tSQLt].[Private_GetQuotedFullName](@Objectid INT)
+RETURNS NVARCHAR(517)
+AS
+BEGIN
+    DECLARE @QuotedName NVARCHAR(517);
+    SELECT @QuotedName = QUOTENAME(OBJECT_SCHEMA_NAME(@Objectid)) + '.' + QUOTENAME(OBJECT_NAME(@Objectid));
+    RETURN @QuotedName;
+END;
+GO

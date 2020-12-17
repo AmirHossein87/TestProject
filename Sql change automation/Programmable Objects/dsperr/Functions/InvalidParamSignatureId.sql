@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[InvalidParamSignatureId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[InvalidParamSignatureId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[InvalidParamSignatureId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55023;  
+END
+			
+GO

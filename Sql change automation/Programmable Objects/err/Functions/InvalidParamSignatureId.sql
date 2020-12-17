@@ -1,0 +1,16 @@
+IF OBJECT_ID('[err].[InvalidParamSignatureId]') IS NOT NULL
+	DROP FUNCTION [err].[InvalidParamSignatureId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [err].[InvalidParamSignatureId]()
+RETURNS INT WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55029;  
+END
+GO

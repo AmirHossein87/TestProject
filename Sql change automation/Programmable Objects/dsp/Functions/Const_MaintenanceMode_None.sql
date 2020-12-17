@@ -1,0 +1,17 @@
+IF OBJECT_ID('[dsp].[Const_MaintenanceMode_None]') IS NOT NULL
+	DROP FUNCTION [dsp].[Const_MaintenanceMode_None];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dsp].[Const_MaintenanceMode_None] ()
+RETURNS INT WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 0;
+END;
+
+
+GO

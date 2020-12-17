@@ -1,0 +1,26 @@
+IF OBJECT_ID('[dspAuth].[ObjectType_User]') IS NOT NULL
+	DROP FUNCTION [dspAuth].[ObjectType_User];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dspAuth].[ObjectType_User]()
+ RETURNS INT WITH SCHEMABINDING
+ AS 
+ BEGIN
+     RETURN 2;
+ END
+
+
+
+
+
+
+
+
+
+
+
+GO

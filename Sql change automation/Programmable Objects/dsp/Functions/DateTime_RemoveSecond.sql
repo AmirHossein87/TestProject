@@ -1,0 +1,23 @@
+IF OBJECT_ID('[dsp].[DateTime_RemoveSecond]') IS NOT NULL
+	DROP FUNCTION [dsp].[DateTime_RemoveSecond];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dsp].[DateTime_RemoveSecond] (@DateTime DATETIME)
+RETURNS DATETIME
+WITH SCHEMABINDING
+AS
+BEGIN
+	DECLARE @Date DATETIME = CAST(@DateTime AS DATE)	
+	DECLARE @Hour INT = DATEPART(HOUR, @DateTime)
+	DECLARE @Minute INT = DATEPART(MINUTE, @DateTime)
+
+    DECLARE @Result DATETIME = DATEADD(MINUTE, @Minute, @Date)
+	SET @Result = DATEADD(HOUR, @Hour, @Result)
+
+	RETURN @Result
+END
+GO

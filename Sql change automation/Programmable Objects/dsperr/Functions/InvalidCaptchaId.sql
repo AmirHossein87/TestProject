@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[InvalidCaptchaId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[InvalidCaptchaId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[InvalidCaptchaId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55016;  
+END
+			
+GO

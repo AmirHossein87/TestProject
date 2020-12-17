@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[MaintenanceId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[MaintenanceId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[MaintenanceId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55021;  
+END
+			
+GO

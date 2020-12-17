@@ -1,0 +1,16 @@
+IF OBJECT_ID('[err].[DuplicateRequestExceptionId]') IS NOT NULL
+	DROP FUNCTION [err].[DuplicateRequestExceptionId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [err].[DuplicateRequestExceptionId]()
+RETURNS INT WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55030;  
+END
+GO

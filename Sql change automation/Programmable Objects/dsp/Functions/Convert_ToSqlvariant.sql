@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsp].[Convert_ToSqlvariant]') IS NOT NULL
+	DROP FUNCTION [dsp].[Convert_ToSqlvariant];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+CREATE FUNCTION [dsp].[Convert_ToSqlvariant] (@Value TBIGSTRING)
+RETURNS SQL_VARIANT
+AS
+BEGIN
+	RETURN CAST(@Value AS NVARCHAR(4000));
+END;
+
+GO

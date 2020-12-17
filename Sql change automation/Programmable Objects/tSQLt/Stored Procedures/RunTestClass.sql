@@ -1,0 +1,15 @@
+IF OBJECT_ID('[tSQLt].[RunTestClass]') IS NOT NULL
+	DROP PROCEDURE [tSQLt].[RunTestClass];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [tSQLt].[RunTestClass]
+   @TestClassName NVARCHAR(MAX)
+AS
+BEGIN
+    EXEC tSQLt.Run @TestClassName;
+END
+GO

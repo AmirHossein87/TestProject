@@ -1,0 +1,16 @@
+IF OBJECT_ID('[err].[AmbiguousExceptionId]') IS NOT NULL
+	DROP FUNCTION [err].[AmbiguousExceptionId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [err].[AmbiguousExceptionId]()
+RETURNS INT WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55020;  
+END
+GO

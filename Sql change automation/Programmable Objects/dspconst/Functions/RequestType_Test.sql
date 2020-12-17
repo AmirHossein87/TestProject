@@ -1,0 +1,16 @@
+IF OBJECT_ID('[dspconst].[RequestType_Test]') IS NOT NULL
+	DROP FUNCTION [dspconst].[RequestType_Test];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE   FUNCTION [dspconst].[RequestType_Test] ()
+RETURNS INT
+WITH SCHEMABINDING
+AS
+BEGIN
+    RETURN 1;
+END;
+GO

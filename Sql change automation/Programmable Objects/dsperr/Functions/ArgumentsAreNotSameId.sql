@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[ArgumentsAreNotSameId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[ArgumentsAreNotSameId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[ArgumentsAreNotSameId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55027;  
+END
+			
+GO

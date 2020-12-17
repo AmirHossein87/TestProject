@@ -1,0 +1,16 @@
+IF OBJECT_ID('[err].[AccessDeniedOrObjectNotExistsId]') IS NOT NULL
+	DROP FUNCTION [err].[AccessDeniedOrObjectNotExistsId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [err].[AccessDeniedOrObjectNotExistsId]()
+RETURNS INT WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55002;  
+END
+GO

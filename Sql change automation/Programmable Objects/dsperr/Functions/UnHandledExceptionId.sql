@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[UnHandledExceptionId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[UnHandledExceptionId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[UnHandledExceptionId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55028;  
+END
+			
+GO

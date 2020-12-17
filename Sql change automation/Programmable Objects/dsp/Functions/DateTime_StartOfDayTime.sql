@@ -1,0 +1,21 @@
+IF OBJECT_ID('[dsp].[DateTime_StartOfDayTime]') IS NOT NULL
+	DROP FUNCTION [dsp].[DateTime_StartOfDayTime];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dsp].[DateTime_StartOfDayTime] (@Time DATETIME)
+RETURNS DATETIME
+AS
+BEGIN
+	DECLARE @PreviousDay DATETIME = CAST(CAST(@Time AS DATE) AS DATETIME);
+
+	RETURN @PreviousDay;
+END;
+
+
+
+
+GO

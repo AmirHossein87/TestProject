@@ -1,0 +1,34 @@
+IF OBJECT_ID('[tSQLt].[Private_ApplyUniqueConstraint]') IS NOT NULL
+	DROP PROCEDURE [tSQLt].[Private_ApplyUniqueConstraint];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [tSQLt].[Private_ApplyUniqueConstraint] 
+  @ConstraintObjectId INT
+AS
+BEGIN
+  DECLARE @SchemaName NVARCHAR(MAX);
+  DECLARE @OrgTableName NVARCHAR(MAX);
+  DECLARE @TableName NVARCHAR(MAX);
+  DECLARE @ConstraintName NVARCHAR(MAX);
+  DECLARE @CreateConstraintCmd NVARCHAR(MAX);
+  DECLARE @AlterColumnsCmd NVARCHAR(MAX);
+  
+  SELECT @SchemaName = SchemaName,
+         @OrgTableName = OrgTableName,
+         @TableName = TableName,
+         @ConstraintName = OBJECT_NAME(@ConstraintObjectId)
+    FROM tSQLt.Private_GetQuotedTableNameForConstraint(@ConstraintObjectId);
+      
+  SELECT @AlterColumnsCmd = NotNullColumnCmd,
+         @CreateConstraintCmd = CreateConstraintCmd
+    FROM tSQLt.Private_GetUniqueConstraintDefinition(@ConstraintObjectId, QUOTENAME(@SchemaName) + '.' + QUOTENAME(@TableName));
+
+  EXEC tSQLt.Private_RenameObjectToUniqueName @SchemaName, @ConstraintName;
+  EXEC (@AlterColumnsCmd);
+  EXEC (@CreateConstraintCmd);
+END;
+GO

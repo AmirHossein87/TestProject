@@ -1,0 +1,16 @@
+IF OBJECT_ID('[dspconst].[Exception_DspFailErrorId]') IS NOT NULL
+	DROP FUNCTION [dspconst].[Exception_DspFailErrorId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dspconst].[Exception_DspFailErrorId] ()
+RETURNS INT
+WITH SCHEMABINDING
+AS
+BEGIN
+    RETURN 60000;
+END;
+GO

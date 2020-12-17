@@ -1,0 +1,19 @@
+IF OBJECT_ID('[dsp].[Context_UserId]') IS NOT NULL
+	DROP FUNCTION [dsp].[Context_UserId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE	FUNCTION [dsp].[Context_UserId] (@Context TCONTEXT)
+RETURNS TSTRING
+AS
+BEGIN
+	RETURN	JSON_VALUE(@Context, '$.UserId');
+END;
+
+
+
+GO

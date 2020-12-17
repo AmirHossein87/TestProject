@@ -1,0 +1,15 @@
+IF OBJECT_ID('[const].[UserName_App]') IS NOT NULL
+	DROP FUNCTION [const].[UserName_App];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [const].[UserName_App]()
+RETURNS TSTRING
+AS
+BEGIN
+    RETURN 'Log_App';
+END
+GO

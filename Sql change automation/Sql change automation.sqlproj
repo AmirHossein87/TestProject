@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Sql change automation</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>7951e59e-8ec4-410e-8dd7-de99bccd727b</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath></RootPath>
+    <RootNamespace>Sql change automation</RootNamespace>
+    <AssemblyName>Sql change automation</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
+    <IsSqlChangeAutomationProject>True</IsSqlChangeAutomationProject>
+    <MinimumEngineVersion>1.17.18144</MinimumEngineVersion>
+    <SqlChangeAutomationSchemaVersion>1.12</SqlChangeAutomationSchemaVersion>
+    <DeployOnceSubFolder>Migrations</DeployOnceSubFolder>
+    <DeployChangesSubFolder>Programmable Objects</DeployChangesSubFolder>
+    <DeployChangesImportSchemaFolders>True</DeployChangesImportSchemaFolders>
+    <PreDeploymentSubFolder>Pre-Deployment</PreDeploymentSubFolder>
+    <PostDeploymentSubFolder>Post-Deployment</PostDeploymentSubFolder>
+    <GenerateSqlPackage>False</GenerateSqlPackage>
+    <MigrationOrdering>FilePath</MigrationOrdering>
+    <EvaluateExecutionOrderOnImport>True</EvaluateExecutionOrderOnImport>
+    <Baselining>FolderBased</Baselining>
+    <Provisioner>CustomScripts</Provisioner>
+    <SyncOptionIgnoretSQLt>False</SyncOptionIgnoretSQLt>
+    <DeployChangesExecutionOrder>64918e63-046b-5aee-ae61-f841f63a549e|Programmable Objects\dsp\Stored Procedures\ThrowException.sql;3ffbd514-3d73-5eaf-8886-71251133f217|Programmable Objects\dsp\Functions\Param_IsSetBase.sql;461a7dd0-a845-538e-acbc-052db2aee260|Programmable Objects\dsp\Functions\Param_IsSet.sql;ebe10bcd-ecee-5120-8980-40b9c4435279|Programmable Objects\dsp\Functions\Param_IsSetString.sql;2dfea444-4a06-55bf-b7ea-3f9b726020e7|Programmable Objects\dsp\Functions\Formatter_FormatParam.sql;b079ab97-a9ef-580f-b3a7-24b521b195de|Programmable Objects\dsp\Functions\Formatter_FormatMessage.sql;220c8959-b283-54e5-9f7e-8303b3186122|Programmable Objects\dsp\Functions\Exception_BuildMessageParam4.sql;86136b85-358a-51a4-8227-0d6e296909d9|Programmable Objects\dsp\Stored Procedures\ThrowAppException.sql;001e1856-8464-50b5-bca7-55c25e36ca09|Programmable Objects\err\Functions\InvalidArgumentId.sql;d077a94b-3be2-570d-9890-47a3c9fd426e|Programmable Objects\err\Stored Procedures\ThrowInvalidArgument.sql;136e9064-dd77-56c8-ac53-2b3e19a7baa3|Programmable Objects\dbo\Stored Procedures\Log_Create.sql;43df9791-c582-5d49-94a7-c61f1b9c6a6d|Programmable Objects\dsp\Functions\Context_UserId.sql;092200de-6675-5af5-8acd-49b7ef279e44|Programmable Objects\dsp\Stored Procedures\Setting_GetProps.sql;dd927102-bec7-5485-ae0d-1fff03677fef|Programmable Objects\dsp\Stored Procedures\Context_SetProps.sql;bedde980-39e1-58a8-bd35-cf295f51d172|Programmable Objects\err\Functions\AuthUserNotFoundId.sql;23a7666f-53a2-5dd5-8619-7f399287f4ad|Programmable Objects\err\Stored Procedures\ThrowAuthUserNotFound.sql;7bd49fd0-cbe4-5182-bf87-158e0146acfc|Programmable Objects\dbo\Stored Procedures\User_UserIdByAuthUserId.sql;382fe5ce-75af-5426-9330-44bd0c876f07|Programmable Objects\dsperr\Functions\GeneralExceptionId.sql;01ecc168-a482-52c2-afcd-37768ef5d3ec|Programmable Objects\dsp\Stored Procedures\ThrowGeneralException.sql;696f60f7-62bd-5a84-b73a-049233a836c9|Programmable Objects\dsperr\Functions\InvokerAppVersionId.sql;86cf6b47-0c1a-5fec-b7e1-fa0d3daa68ef|Programmable Objects\dsperr\Stored Procedures\ThrowInvokerAppVersion.sql;b904c28e-7fc5-54c3-8ef2-51c8f06591d3|Programmable Objects\dsperr\Functions\MaintenanceReadOnlyId.sql;932e2a4c-d537-5398-8568-0877606dcbbd|Programmable Objects\dsperr\Stored Procedures\ThrowMaintenanceReadOnly.sql;b925d8fb-4859-5a24-b626-f07da790a97c|Programmable Objects\dsp\Functions\Database_IsReadOnly.sql;c33e2370-2b12-5e52-8ba7-450c43bf4f90|Programmable Objects\dsperr\Functions\MaintenanceId.sql;e2bc8435-7a19-54ac-82bd-9c06aa76add3|Programmable Objects\dsperr\Stored Procedures\ThrowMaintenance.sql;b52bab46-207a-5f38-bf7f-f1bef3b1bee1|Programmable Objects\err\Functions\PageSizeTooLargeId.sql;0ecc8c08-9ea7-5911-9c12-3f133b96fdaf|Programmable Objects\err\Stored Procedures\ThrowPageSizeTooLarge.sql;85b51ce9-e4d7-5c27-929a-5788cc60a4c7|Programmable Objects\dsp\Functions\Param_IsSetOrNotNull.sql;39a2bfe8-9698-5517-9294-edeeeb4b25cf|Programmable Objects\dsp\Stored Procedures\Context_$ValidatePagination.sql;928e5bd8-7425-5ea1-ab10-520db2678c2d|Programmable Objects\dsp\Stored Procedures\Context_GetProps.sql;b219166c-cefc-50f4-9fb5-9d53824830bf|Programmable Objects\dsp\Stored Procedures\Context_Create.sql;93f8ec07-bf45-557f-9bd9-6c60d844c3f1|Programmable Objects\dsp\Stored Procedures\Context_CreateSystem.sql;7be33c97-d13a-5318-abed-97dcd05e0d2d|Programmable Objects\dsp\Stored Procedures\Context_Verify.sql;31b5920a-f92b-5ace-91a2-1c7be0678eb4|Programmable Objects\api\Stored Procedures\Log_Create.sql;9317fb01-d915-550c-8149-1a704dd0c043|Programmable Objects\dbo\Functions\Log_Filter.sql;d9070057-6a2f-570b-a46f-dc68220874d5|Programmable Objects\api\Stored Procedures\Log_Filter.sql;1a8f3163-de7a-5d8d-aaa2-9f1a2fbe94d0|Programmable Objects\api\Stored Procedures\System_Api.sql;c256c16c-0373-5ad9-bb99-5ee63bf7b9d9|Programmable Objects\dsp\Functions\Json_Getproperties.sql;918f8c45-b86b-5178-9bad-d0b229ea24cf|Programmable Objects\dsp\Functions\Json_GetSelectScript.sql;bb2154f6-d2b8-5287-8b55-a104ab1e38eb|Programmable Objects\dsp\Functions\SplitString.sql;008d4bdc-589a-5c97-bb1e-2ff308975311|Programmable Objects\dspconst\Functions\TemporalType_Lookup.sql;15d97c77-d8db-59c8-82a4-760294890fee|Programmable Objects\DatabaseVersioning\Functions\Table_SyncDataScript.sql;7ace4c8e-0071-5544-954b-037bdc7f01fc|Programmable Objects\dsperr\Functions\ArgumentsAreNotSameId.sql;475a04ed-1eac-5901-a14b-60540a4c6f20|Programmable Objects\dsperr\Stored Procedures\ThrowArgumentsAreNotSame.sql;f218cea2-e6ef-5a2a-a3d8-783e60a77717|Programmable Objects\dsp\Stored Procedures\Json_Compare.sql;2c907a01-60c1-5a16-8b21-f960eb54964e|Programmable Objects\dsp\Views\vw_SystemTable.sql;ab7fc2f9-a601-5128-a05b-22b3f2b0d086|Programmable Objects\dsp\Functions\Table_Params.sql;3badf7fe-d9e9-5ab1-9e3a-da7e1dffb641|Programmable Objects\dsp\Functions\Table_GetParamsJson.sql;fd4eef9c-e1fe-52ab-8432-b5ce0022c62d|Programmable Objects\dsp\Stored Procedures\Database_Tables.sql;88fccc8e-feb9-5d7f-86a5-3bfe590dd390|Programmable Objects\DatabaseVersioning\Stored Procedures\Database_CompareTablesStructure.sql;98d17d72-a4c1-5610-ab2c-05b659fa9886|Programmable Objects\dsperr\Functions\AccessDeniedOrObjectNotExistsId.sql;6ff1e14d-4a98-52c0-89b3-3ab4c2f54aa6|Programmable Objects\dsperr\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql;656852a7-c120-5ce8-add0-6ff7ccdc3aef|Programmable Objects\dsp\Stored Procedures\Table_ValidateExistance.sql;cff7fc4d-1737-53c8-9bb8-438461e42e69|Programmable Objects\dsp\Stored Procedures\Table_DisableTemporalAttribute.sql;fda2f7e9-3528-50d9-ab3a-d41717908a4e|Programmable Objects\dsperr\Functions\InvalidOperationId.sql;fc098a5d-e705-5b8b-aa2e-f5f6ce6ed685|Programmable Objects\dsperr\Stored Procedures\ThrowInvalidOperation.sql;3ec35182-67fe-5223-8309-f349e8ca5304|Programmable Objects\dspconst\Functions\TemporalType_Temporal.sql;8b543735-e25d-5ed4-bd1f-d32269e61a17|Programmable Objects\dsp\Functions\Exception_BuildMessage.sql;c63cc5e4-d3a6-5edd-8947-dabd410c9344|Programmable Objects\dsperr\Functions\InvalidArgumentId.sql;4318856d-1d11-5e5d-9f3f-3b9e82bd2218|Programmable Objects\dsp\Functions\Exception_BuildInvalidArgument.sql;a64cdc96-ddc8-5bfc-b4e9-207639018b1f|Programmable Objects\dsp\Stored Procedures\ThrowInvalidArgument.sql;8727cfdc-ae13-5fde-bf61-1692dec0943a|Programmable Objects\dsp\Stored Procedures\Validate_CheckNotNull.sql;fcc355ae-c840-5694-aa73-7429a89c8057|Programmable Objects\DatabaseVersioning\Stored Procedures\Databaseversioning_DisableTemporal.sql;82fecc54-eb26-561d-b318-d1e2a2411b25|Programmable Objects\dsp\Stored Procedures\Table_EnableTemporalAttribute.sql;e30bb69f-de10-5011-8589-7c9bf3cadeda|Programmable Objects\DatabaseVersioning\Stored Procedures\DatabaseVersioning_EnableTemporal.sql;5b4b5b29-98aa-5e41-9c8d-aca94a990c67|Programmable Objects\dsp\Functions\Log_$CheckFilters.sql;3739c283-53d0-507e-9a17-d14e65cf3e98|Programmable Objects\dsp\Functions\String_ReplaceEnter.sql;113b3e10-8acf-5c21-9081-f875c4df6445|Programmable Objects\dsp\Functions\Log_FormatMessage2.sql;2030fdf3-90e5-513f-9a5a-34002b323d96|Programmable Objects\dsp\Functions\Log_IsEnabled.sql;cefb3fd7-d219-5e87-b263-d5ecbe8b2016|Programmable Objects\dsp\Stored Procedures\Log_Trace.sql;c34d2ce2-ac71-5652-ab3b-5c2dc668b546|Programmable Objects\DatabaseVersioning\Stored Procedures\Init_$InitSettings.sql;b8dd6c9f-26e8-5fbf-8b5b-94dc7596543c|Programmable Objects\dsp\Stored Procedures\Table_CompareData.sql;633ad1c7-9555-5625-b623-843c334349a8|Programmable Objects\dspconst\Functions\TemporalType_Transactional.sql;15953fc6-c603-58c8-afcd-7ecdffdd3ce8|Programmable Objects\dspconst\Functions\TemporalType_Ordinary.sql;09f8b2d7-8807-5afe-b8a1-99cd5b8ce83b|Programmable Objects\DatabaseVersioning\Stored Procedures\Init_FillLookups.sql;cc7655a0-04b3-5d12-89e8-862170963d40|Programmable Objects\DatabaseVersioning\Stored Procedures\Setting_SetProps.sql;f1b1adf6-d8f4-55ea-b331-3cf6e6a19984|Programmable Objects\DatabaseVersioning\Functions\Table_Columns.sql;f511ea70-fa2e-586d-a44b-2222d8dda415|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetLookupData.sql;abd50b25-c39c-5438-9de7-abd857298c95|Programmable Objects\dsp\Functions\DateTime_ConvertLocalToUTC.sql;6156802d-b6ae-56a8-95ed-132faa24a113|Programmable Objects\dspconst\Functions\ReferenceTime.sql;31437120-248c-5181-84f8-5581b1b3b8a0|Programmable Objects\DatabaseVersioning\Stored Procedures\Setting_GetProps.sql;e42c5b1c-79c1-5310-b466-fd0be922a277|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetTemporalData.sql;270dd539-7b1a-5308-8dc8-089d1696320c|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetTransactionalData.sql;e722b5de-9153-551d-9ae6-6f00326700e8|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetOrdinaryData.sql;9b56c0bc-0892-54bd-888c-3f9e2c3de26b|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetMaxTimeValue.sql;2c98b614-3aca-53ad-a598-cccce52aae21|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetData.sql;40525441-a5ea-5067-bc51-e8ebb30d6ed6|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_SyncData.sql;01e5b1f2-3ecd-5e69-a541-e4277aef44c3|Programmable Objects\DatabaseVersioning\Stored Procedures\Table_SyncAllData.sql;ca27eb8d-63de-51e6-bb44-3a7eb5fe5f6e|Programmable Objects\DatabaseVersioning\Functions\Table_HasColumnName.sql;ea801f08-5cac-5345-92a2-d39011e4b5d3|Programmable Objects\dsp\Functions\Table_HasPrimaryKey.sql;31b82087-cd62-5e6c-ac89-59db6c1c7ac0|Programmable Objects\DatabaseVersioning\Stored Procedures\Validate_Mirroring.sql;46885e85-dd19-5d52-aa4f-9fb85b30fae6|Programmable Objects\dsp\Functions\Convert_ToString.sql;5200d162-b629-5e01-911b-77ba768529d1|Programmable Objects\dsp\Stored Procedures\String_Tokenize.sql;a771038b-3365-57cd-8e86-a9543bfe5cff|Programmable Objects\dsp\Stored Procedures\Setting_$IncreaseAppVersion.sql;166b6721-55f6-56b6-ad89-a8ecf9c4c249|Programmable Objects\dsp\Stored Procedures\Util_VerifyServerName.sql;cd81dbc8-0463-5127-84c4-2f7a35737561|Programmable Objects\dsp\Stored Procedures\Setting_SetProps.sql;73501442-66a8-5ebd-b643-2c0f72cd6f50|Programmable Objects\dsperr\Functions\ObjectAlreadyExistsId.sql;69311c07-7fb0-54af-a4c6-f4c3c614a601|Programmable Objects\dsperr\Stored Procedures\ThrowObjectAlreadyExists.sql;d65385e7-f100-5308-961c-6b4aefb2a116|Programmable Objects\dspAuth\Functions\ObjectType_User.sql;34df9d2e-711c-5348-82ef-078a5b696252|Programmable Objects\dbo\Stored Procedures\User_CreateByAuthId.sql;2d7025ff-1098-5ee5-883c-95b960c06762|Programmable Objects\dbo\Stored Procedures\User_CreateByAuthUserName.sql;35e0149b-c36a-5e19-8259-8261aefe1495|Programmable Objects\dbo\Stored Procedures\Init_$CreateUsersAndRoles.sql;259d5d4f-75e8-53ca-9cf3-b93d3ddfbb0e|Programmable Objects\dsperr\Functions\ProductionEnvinronmentIsTurnedOnId.sql;37c68171-2f7a-535f-839d-30399977505c|Programmable Objects\dsperr\Stored Procedures\ThrowProductionEnvinronmentIsTurnedOn.sql;4529f2d9-a92b-56f5-99c1-d26b984e1e78|Programmable Objects\dsp\Stored Procedures\Util_ProtectProductionEnvironment.sql;f9412581-e5f5-5ade-b789-5e37ee203e8e|Programmable Objects\dbo\Stored Procedures\Init_Cleanup.sql;6f15b05d-5e0a-5e25-9f1e-1c0b8edc3408|Programmable Objects\dbo\Stored Procedures\Init_FillData.sql;3adc0126-8deb-5449-ac19-a276a6de7272|Programmable Objects\const\Functions\Application_IcLoyalty.sql;e0c2ee14-f89e-51b4-b148-9afbdf15bbc9|Programmable Objects\dbo\Stored Procedures\Init_FillLookups.sql;b6ae07d6-5650-5b5b-8b1b-401dc35005a9|Programmable Objects\dbo\Stored Procedures\Setting_SetProps.sql;b18026e4-1fdb-571d-98bf-c677e6cd939b|Programmable Objects\dsp\Functions\Util_IsEqual.sql;c3dda683-4cb7-51e6-bc32-19e345f7ed99|Programmable Objects\dsp\Functions\Param_IsChanged.sql;f648dfaf-15ff-5c80-a258-b13e05953e55|Programmable Objects\dsp\Functions\CheckIfChanged_Int.sql;999e74f2-4657-5124-944e-fa84efb6ca5d|Programmable Objects\dsp\Functions\Convert_ToSqlvariant.sql;97a68d48-322e-55cc-8914-c72badd8c7ae|Programmable Objects\dsp\Functions\CheckIfChanged_String.sql;1cd2b93b-130b-578c-b4dd-29bca37eaa14|Programmable Objects\dspconst\Functions\Table_IsTemporalHistory.sql;9a273424-49f0-589c-b087-e7336be596ed|Programmable Objects\dsp\Functions\Table_HasTemporalAttributes.sql;9772d894-80e7-567e-8b64-7f5fbdaa94fb|Programmable Objects\dsp\Functions\Database_CheckPrimaryOnTables.sql;fb0e6109-e6a8-5704-b7c3-49b13721cc41|Programmable Objects\dsp\Functions\DateTime_FormatIntervalMillisecond.sql;5ce20e2f-39d8-5b20-85d3-9bc6604c752b|Programmable Objects\dsp\Functions\DateTime_FormatInterval.sql;9c2e766b-67ac-5426-98c9-86e62fb798c8|Programmable Objects\dsp\Functions\DaysOfTheWeek_FromString.sql;99798464-9cf6-5550-8055-7cc2fbfa69e9|Programmable Objects\dsp\Functions\DateTime_GetLastDayTimeOfWeek.sql;0c4bdde6-7204-552d-abe8-e0b2bf509941|Programmable Objects\dsp\Functions\Validate_IsValidEmail.sql;b7ce7e26-9779-52d5-8c16-5cd7745c2372|Programmable Objects\dsp\Functions\Formatter_FormatEmail.sql;911d1234-d416-547c-a126-b01e02fb262a|Programmable Objects\dsp\Functions\Formatter_FormatMobileNumber.sql;22c582f7-4f11-5a33-bbd1-ee8b22bf4161|Programmable Objects\dsp\Functions\Formatter_RedactMobileNumber.sql;306aeea0-e3f5-5a49-8a41-3be83cbec327|Programmable Objects\dsp\Functions\Database_$FunctionTypeName.sql;6f634e92-57c2-5221-9d78-f3dc7a2e749e|Programmable Objects\dsp\Functions\Function_List.sql;cfde87c4-045e-5873-8185-a2c9d397810e|Programmable Objects\dsp\Functions\Log_FormatMessage.sql;1153bd3d-040a-5af1-a6f0-e43969e4be39|Programmable Objects\dsperr\Functions\UnHandledExceptionId.sql;718afccc-c1d8-5674-b3f5-572aa28e70a7|Programmable Objects\dsp\Functions\Message_CommonExceptionFormat.sql;82c7ad0c-6918-5c5c-baed-40765ae9cb3c|Programmable Objects\dsp\Functions\Param_IsSetOrNotNullString.sql;62976cb6-43a8-5709-8f5a-e1e4be16fa25|Programmable Objects\dsp\Functions\StoredProcedure_Metadata.sql;df8e718a-d383-5467-8bbb-7716124bc6dc|Programmable Objects\dsp\Functions\StoredProcedure_List.sql;89b3b6ec-c07d-5b70-9d45-fdeeed46def5|Programmable Objects\dsp\Functions\StoredProcedure_FilterByApiKey.sql;536fb13f-8c52-58dd-ad6d-98057dc2a847|Programmable Objects\dsp\Functions\StoredProcedure_MaxKey.sql;728219d5-733e-5242-84e2-5e4771eb9986|Programmable Objects\dsp\Functions\StoredProcedure_NameByApiKey.sql;bf3eb768-3545-5edf-9e62-fa6ffc3d80ef|Programmable Objects\dsp\Functions\StoredProcedure_VersionNumber.sql;6ab395cf-b5cf-5b5b-b59a-9a5f68ac3b74|Programmable Objects\dsp\Functions\StoreProcedure_MaxVersionNumber.sql;f5665454-81af-5cfc-807a-ffaa27381cbd|Programmable Objects\dsp\Functions\StringTable_Value.sql;d55cc918-1b92-556f-901e-c9bea12d99c3|Programmable Objects\dsp\Functions\Table_GetExtendedPropertyValueByKey.sql;e606bc6e-b1f6-5b5d-9a48-5a783c298d5b|Programmable Objects\dsp\Functions\Table_GetTransactionalTableWithoutCreatedTime.sql;c46b5191-3bdd-595f-b239-7c5fd5c7107a|Programmable Objects\dsp\Stored Procedures\Log_Error.sql;900760d0-0392-5564-95bc-fa412952d02a|Programmable Objects\dsp\Stored Procedures\Audit_Error.sql;24ba61c1-4dd8-55e5-994c-cb991add6850|Programmable Objects\dsp\Stored Procedures\Audit_Trace.sql;2368b6a2-aba4-5d44-9c25-0db543f69628|Programmable Objects\dsp\Stored Procedures\Log_Warn.sql;452ab7eb-cd04-5ec0-9739-3150d675ba6a|Programmable Objects\dsp\Stored Procedures\Audit_Warning.sql;e926fcf6-2d37-564f-9309-a2c84fe85842|Programmable Objects\dsp\Functions\Convert_BinaryToBase64.sql;28d33d14-11d0-566e-887a-87f554310f6f|Programmable Objects\dsp\Functions\CRYPT_PBKDF2_VARBINARY_SHA512.sql;af36bd32-6833-5d8e-a3eb-46777389ce6b|Programmable Objects\dsp\Stored Procedures\String_CreateRandom.sql;ef3b20b6-7d75-5eae-8601-5df762790889|Programmable Objects\dsp\Functions\Const_Algorithm_PBKDF2_SHA512.sql;0979b08f-28a4-5d05-9066-b4530ea2c2eb|Programmable Objects\dsp\Stored Procedures\Crypt_CreatePassword.sql;24277087-6833-592c-9b67-1a3914f5c173|Programmable Objects\dsp\Functions\Path_RemoveExtension.sql;07d2b661-d0c4-50e2-bd69-6d33d296936f|Programmable Objects\dsp\Stored Procedures\Database_InitInMemoryDatabase.sql;4135252a-b4c7-5c41-b950-7cca606a6a1f|Programmable Objects\dsp\Functions\StoredProcedure_Params.sql;f1eab176-be90-58f7-9768-65b7a7346faa|Programmable Objects\dsp\Functions\StoredProcedure_InvokeStoreProcedureName.sql;2add5239-8e67-5389-b9d2-1da4d9badc5c|Programmable Objects\dsp\Stored Procedures\Database_StoredProcedures.sql;1bcb2e15-f66e-53c1-ac77-6ef178469808|Programmable Objects\dsp\Stored Procedures\DatabaseVersioning_Refresh.sql;31c85422-d540-5819-8593-759622fdb970|Programmable Objects\dsp\Stored Procedures\Exception_ThrowWithCommonFormat.sql;058d7e3e-58cb-5066-8152-e1fc388374f6|Programmable Objects\dsp\Functions\Setting_VersioningSchemaName.sql;2cf54733-5722-55f8-9974-746cefce0d89|Programmable Objects\dsp\Stored Procedures\Init_$IncreaseAppVersion.sql;03c59e43-24a9-5235-b28b-438509d9b11e|Programmable Objects\dsp\Stored Procedures\Init_NewAppVersion.sql;22288828-dffb-5f6d-a1af-2d88a76bb7bf|Programmable Objects\dsp\Stored Procedures\Init_SystemTable.sql;a83b352c-9f68-5acd-95e1-7a9ab9b9490e|Programmable Objects\dsp\Functions\Metadata_IsObjectExists.sql;cc712b88-faac-5e0e-9939-b5ff67c6bf0d|Programmable Objects\dsp\Stored Procedures\Init_FillSystemTableData.sql;69caa41e-0de3-5e9e-8b99-9501238de375|Programmable Objects\dsp\Stored Procedures\Init_FillData.sql;6f23cc38-5eac-5353-8330-7de245f89aaa|Programmable Objects\dspconst\Functions\ProviderType_Email.sql;99f41177-203a-5bcf-83fb-84566ea5dbd0|Programmable Objects\dspconst\Functions\ProviderType_SMS.sql;11e62c96-2463-5877-b045-dc873320dbbd|Programmable Objects\dspconst\Functions\WaitForReplyMessageState_NotProcess.sql;06bc9fec-f9fc-5437-a34b-02d5ca47de04|Programmable Objects\dspconst\Functions\WaitForReplyMessageState_Expired.sql;c1f3dab0-1281-58c7-9eaa-5eeb7280df22|Programmable Objects\dspconst\Functions\WaitForReplyMessageState_Processed.sql;1b69f3c6-8cf6-5b3c-81a5-ec10007af6ce|Programmable Objects\dspconst\Functions\MessagePatternStepType_DoCheckConfirmActivation.sql;9f2f357a-2d6c-5d17-900f-e80ef5945b18|Programmable Objects\dspconst\Functions\MessagePatternStepType_DoRun.sql;28c8948c-563a-5000-894a-5d1e7148e24d|Programmable Objects\dspconst\Functions\MessagePatternStepType_SendMessage.sql;ee21e523-61d1-5c49-a37c-88e38cb75eb4|Programmable Objects\dspconst\Functions\MessagePatternStepType_InputOutputParam.sql;9aff70f6-7c94-5493-acf9-e0f9d776a94c|Programmable Objects\dspconst\Functions\MessagePatternStepType_OutputParam.sql;f3d7886f-2bf0-5c70-86cb-19daa4bc23b2|Programmable Objects\dspconst\Functions\MessagePatternStepType_InputParam.sql;e0bc3be9-5f72-5cb6-ab2b-b417d20cad9d|Programmable Objects\dspconst\Functions\InboxMessageProcessState_CustomConfirmFailed.sql;6ddb3fa0-8d57-53b4-b96c-ed07079a402c|Programmable Objects\dspconst\Functions\InboxMessageProcessState_CustomConfirmNotActive.sql;11e9eadd-bd51-56c3-aa02-cdfe2de78002|Programmable Objects\dspconst\Functions\InboxMessageProcessState_ExecResponseProcedureFaild.sql;fb888d0e-a1f1-5bb6-b9eb-afe248fcb570|Programmable Objects\dspconst\Functions\InboxMessageProcessState_AddressNotRegistered.sql;a36c5d5c-01ad-53bc-a7df-dec351a3761a|Programmable Objects\dspconst\Functions\InboxMessageProcessState_InProcess.sql;cb2b357f-e5b3-5673-82c3-f76b24e22d5c|Programmable Objects\dspconst\Functions\InboxMessageProcessState_ProcessedFailed.sql;6c0000f8-d3dd-5829-8b51-0ce68e79454d|Programmable Objects\dspconst\Functions\InboxMessageProcessState_ProcessedNotPair.sql;9b0830c3-4f37-540b-bff4-f68ddd05ce72|Programmable Objects\dspconst\Functions\InboxMessageProcessState_Processed.sql;e3147f7d-302b-56eb-a0f6-6236c5b02be1|Programmable Objects\dspconst\Functions\InboxMessageProcessState_NotProcessed.sql;3d029878-c2f7-5cae-acfa-ba1fcde45464|Programmable Objects\dspconst\Functions\MessagePatternStateId_Canceled.sql;cc3a35af-623f-591d-a891-8f788be6760b|Programmable Objects\dspconst\Functions\MessagePatternStateId_Paused.sql;c0e68f86-8c74-5152-9a3c-94c6e5c25cc9|Programmable Objects\dspconst\Functions\MessagePatternStateId_Started.sql;496cf2de-4c31-56ba-99f2-282dc9ec7471|Programmable Objects\dspconst\Functions\MessagePatternStateId_Drafted.sql;4bfa7419-2875-539b-9363-8c09d4fe0d25|Programmable Objects\dspconst\Functions\MessagePatternSeprator_DollorSign.sql;b305603a-63fa-5f7a-bfc9-8471e9bd3172|Programmable Objects\dspconst\Functions\MessagePatternSeprator_AT.sql;bc28d266-5251-5c91-914b-4d14a7a1fbca|Programmable Objects\dspconst\Functions\MessagePatternSeprator_Star.sql;bd31f9a1-e440-5770-982b-28e223cfb7c2|Programmable Objects\dspconst\Functions\MessagePatternSeprator_Sharp.sql;ad3c1af6-9b3f-55af-ac30-9fa590363ddb|Programmable Objects\dspconst\Functions\MessagePatternSeprator_Blank.sql;8af614af-5fe5-53ac-924d-f45b0394c7f3|Programmable Objects\dspInboxMessage\Stored Procedures\Init_FillLookups.sql;c6ba247c-f931-5d34-994b-f15b8e22c1fb|Programmable Objects\dsp\Stored Procedures\Init_FillLookups.sql;b635cfa9-ba6e-550b-bf03-c3b22a2dbdb7|Programmable Objects\dsp\Stored Procedures\Schema_DropObjects.sql;9ce41bd3-ac89-5270-8a52-5a9a52c39913|Programmable Objects\dsp\Stored Procedures\Init_RecreateEnumFunctions.sql;c23f6db9-c921-585e-8956-a52d78f68361|Programmable Objects\dsp\Stored Procedures\Init_$RecreateExceptionFunctions.sql;59463fd1-7882-58d0-8a1b-9b74800e0de9|Programmable Objects\dsp\Stored Procedures\Init_$CreateCommonExceptions.sql;525d4d32-bb8c-557c-bdc0-4e72a0dfd5eb|Programmable Objects\dbo\Stored Procedures\Init_FillExceptions.sql;f825f542-d023-5e1d-96e8-8ed660edf926|Programmable Objects\dsp\Stored Procedures\Init_$RecreateStringFunctions.sql;8e8fce6e-6f2c-5b15-b9f9-f88746f95215|Programmable Objects\dbo\Stored Procedures\Init_FillStrings.sql;e7efc85a-1ce5-5eb5-93ee-7b38fcf6bc8d|Programmable Objects\dbo\Stored Procedures\Init_$InitSettings.sql;8290f9aa-0a40-5b1f-96a8-353f6cdae2be|Programmable Objects\dspInboxMessage\Stored Procedures\Init_$InitSettings.sql;af2ee9ae-3ef2-5e21-a7ba-ce15c8f8fbe8|Programmable Objects\dsp\Stored Procedures\Init_$InitSettings.sql;a4cc6ae8-68f5-51cc-9aaa-de0b6df8e9f3|Programmable Objects\dsp\Functions\Table_GetForeignKeys.sql;97dd798e-79ba-5957-abc4-ff2eb48cb5b4|Programmable Objects\dsp\Stored Procedures\Table_DeleteRecords.sql;04227912-ab1c-52ce-b53d-344efc328571|Programmable Objects\dsp\Stored Procedures\Init_$ImpCleanup.sql;c4534956-af25-57fd-99f5-f0711d23140a|Programmable Objects\dspconst\Functions\Exception_ProductionEnvironmentId.sql;f0488477-8c2f-5ad8-b69d-e933c62811f1|Programmable Objects\dsp\Stored Procedures\Init_$Cleanup.sql;ebabfcc5-8750-5fa3-b348-725b9b902c20|Programmable Objects\dsp\Stored Procedures\Init_$SetUp.sql;42b491ff-000a-5267-9e75-0dd2e30e1164|Programmable Objects\dsp\Stored Procedures\Init_$Start.sql;5501e0e1-5d2e-5cd6-af24-f1b7bbc1ed28|Programmable Objects\dsp\Stored Procedures\Init.sql;a016b4bc-1504-5a06-8788-d593ef0f0472|Programmable Objects\dsp\Stored Procedures\Init_Cleanup.sql;7879484b-bf48-5e6d-b39b-e5b126508bf8|Programmable Objects\dsp\Stored Procedures\Init_TemporalTables.sql;dfe84bac-156e-50fe-bf0f-607957b646db|Programmable Objects\dsp\Stored Procedures\Json_ReadWithColumns.sql;201ff5e5-6e9a-57ba-9e26-d3e576e82a59|Programmable Objects\dsp\Stored Procedures\Lock_Create.sql;f25b5591-2ea8-5676-a81d-2749b19750b3|Programmable Objects\dsp\Stored Procedures\Lock_Release.sql;bc3e9bf7-b82e-52b6-b11f-2dbb25f65c93|Programmable Objects\dsp\Stored Procedures\Log_Enable.sql;dea1c792-fa93-5928-9777-096c57d08a4e|Programmable Objects\dsp\Stored Procedures\Log_RemoveFilter.sql;d330c26a-baf9-5242-9dee-54334464dcfe|Programmable Objects\dsp\Stored Procedures\Log_AddFilter.sql;0b49e63f-5dfc-5952-a3ec-96fb8bcaa654|Programmable Objects\dsp\Stored Procedures\Log_Filter.sql;defe3609-e7f0-57cf-b1be-a62c361c6178|Programmable Objects\dsp\Stored Procedures\Log_TraceTime.sql;548df7e9-6f81-5b55-becf-cf458e5ebc6c|Programmable Objects\dsp\Stored Procedures\SetIfChanged_Decimal.sql;faeae1ae-33f3-5268-b3ce-00714f4459ff|Programmable Objects\dsp\Stored Procedures\SetIfChanged_Float.sql;618c5e5b-7b8b-5f99-8c24-f93eafcaae3b|Programmable Objects\dsp\Stored Procedures\SetIfChanged_Int.sql;520c3b4c-5c44-562d-a84b-d3aba67712ea|Programmable Objects\dsp\Stored Procedures\SetIfChanged_Money.sql;d102928b-52da-50c2-a25e-eb98b3f287f3|Programmable Objects\dsp\Stored Procedures\SetIfChanged_String.sql;ee0ad873-ebb6-5165-94fa-0a731e87fda9|Programmable Objects\dsp\Stored Procedures\SetIfChanged_Time.sql;11531496-c2ad-5953-855e-f726d090cc7c|Programmable Objects\dsp\Stored Procedures\StoredProcedure_AssignKey.sql;4b271e0f-6ba4-51f9-8998-adc49a8ff229|Programmable Objects\dsperr\Functions\FatalErrorId.sql;b55e6be2-bd09-518f-85a6-2d7d27d24c80|Programmable Objects\dsp\Stored Procedures\ThrowFatalError.sql;d126ee4e-5bf2-575b-9f66-6a8a2ea7b578|Programmable Objects\dsp\Stored Procedures\StoredProcedure_CreateTempCopy.sql;1828efff-e68d-5831-be54-124d8a89ba5c|Programmable Objects\dsp\Stored Procedures\StoredProcedure_MakeOldVersion.sql;df869071-9c8e-5143-9ade-213a501e8b05|Programmable Objects\dsp\Stored Procedures\StoredProcedure_SetCreatedTime.sql;809fb1d8-3732-5366-a211-f5631252eedd|Programmable Objects\dsp\Functions\Table_GetPrimaryKey.sql;22ea71ea-c9e2-526a-8ceb-c104e5c6e122|Programmable Objects\dsp\Stored Procedures\Table_GetMaxPrimaryKeyValue.sql;13f27916-8b58-5712-85c0-47737cf0375b|Programmable Objects\dsp\Stored Procedures\Table_InitTemporal.sql;1c69b317-2c1d-5344-8032-dedc41874dc2|Programmable Objects\dsp\Stored Procedures\Table_ValidateExtendedPropertyValueByKey.sql;cae68be2-2c0d-5a15-b55f-d53724d01ed3|Programmable Objects\dsperr\Functions\HasNotSameStrcutreId.sql;28af6325-0f0e-530a-9204-2cf7854d50d5|Programmable Objects\dsperr\Stored Procedures\ThrowHasNotSameStrcutre.sql;6d594183-4ab8-5139-84b7-02caef6df0f6|Programmable Objects\dsp\Stored Procedures\TableVersioning_CheckWithSource.sql;0f4418c9-e768-5395-afff-a4fc5ff10cdf|Programmable Objects\dsp\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql;8e95cd43-b3e9-50d1-82d2-f3129d4d1cc4|Programmable Objects\dspconst\Functions\Exception_DspFailErrorId.sql;f8991d5f-56dc-5a05-81c9-43df3d872ded|Programmable Objects\dsp\Stored Procedures\ThrowFail.sql;e576f2ee-27ed-5f58-af52-05c25c9f4ee5|Programmable Objects\dsp\Stored Procedures\ThrowInvalidOperation.sql;27339a9a-117c-53b6-92f6-021668c6479f|Programmable Objects\dsp\Stored Procedures\User_UserIdByAuthUserId.sql;c719282d-e9e9-5173-a848-d2e55da3e863|Programmable Objects\dspAuth\Functions\SecurityDescriptor_Parents.sql;1e125f70-b491-57d6-9221-d2836746be26|Programmable Objects\dspAuth\Functions\Role_HasUser.sql;1eb456fd-bf0e-5dc5-804b-bb872d7ca77f|Programmable Objects\dspAuth\Functions\SecurityDescriptor_UserPermissions.sql;8aa21d6d-1955-53d0-b30e-4b971d90456b|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_UserPermissionObject.sql;40eeaecb-0548-5a08-942e-85efc2eecc78|Programmable Objects\dspAuth\Stored Procedures\Context_Permissions.sql;a6aafa48-e98a-5761-9d40-d708ff773334|Programmable Objects\dspAuth\Stored Procedures\Init_Cleanup.sql;1a2c2f32-63c3-5fe4-8a00-4ac460c06b75|Programmable Objects\dspAuth\Stored Procedures\Role_AddUser.sql;076b9222-9d5d-58eb-96ad-d85fd770d760|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_Create.sql;c3902af3-ee4b-5cfe-bf8a-4b1295d10203|Programmable Objects\dspAuth\Functions\ObjectType_Role.sql;825d8a56-9721-5dcb-8cf7-c2bededd3b5b|Programmable Objects\dspAuth\Stored Procedures\Role_Create.sql;c30cf8cf-93f0-5196-b4e6-11894b6e916b|Programmable Objects\dspAuth\Stored Procedures\Role_Delete.sql;9597e206-3717-5b87-8f94-0bcd31e484d8|Programmable Objects\dspAuth\Stored Procedures\Role_GetProps.sql;037774b5-867b-5242-b806-be5701c13018|Programmable Objects\dspAuth\Stored Procedures\Role_RemoveUser.sql;9a03412b-af71-5991-a949-7d56c02d2684|Programmable Objects\dspAuth\Stored Procedures\Role_SetProps.sql;24b3eb27-ca11-553d-976a-cdd3027b51d2|Programmable Objects\err\Functions\ObjectAlreadyExistsId.sql;167a79d8-c5fc-5d13-9e71-2749b851d294|Programmable Objects\err\Stored Procedures\ThrowObjectAlreadyExists.sql;2335b7ca-2540-5f50-96dc-58d92e3aca5a|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_IsParentOf.sql;30b8fd68-da73-5bc9-9ac6-546988f68756|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_AddParent.sql;98b83b63-4a73-51b2-b4d4-307f82d0dcc0|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_AddRolePermission.sql;9806d763-2e53-5e87-865a-49d5192acf5d|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_GetProps.sql;00d31f5d-25ea-5ccf-a4f2-546524908553|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_RemoveRolePermission.sql;d6c4f968-2831-5a1e-bfb4-3d498ef5319d|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_RemoveUserPermission.sql;f902145d-1ff6-5344-94f1-ee7311692f7c|Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_SecurityDescriptorByObject.sql;06efd53d-32fb-50a2-984f-7c038b08954a|Programmable Objects\dspAuth\Stored Procedures\Validate_CheckAccess.sql;09729249-1a99-560e-8ea1-7ff4e160ee6b|Programmable Objects\dsperr\Functions\AmbiguousExceptionId.sql;153dfda4-0f6c-53d3-9e17-687b947caab1|Programmable Objects\dsperr\Stored Procedures\ThrowAmbiguousException.sql;23fe1988-55fe-51a9-9678-58d372377a04|Programmable Objects\dsperr\Functions\AuthUserNotFoundId.sql;e953c7e4-c1f0-5b26-8e59-3fca688ee971|Programmable Objects\dsperr\Stored Procedures\ThrowAuthUserNotFound.sql;b3e9689c-e51a-5adc-a2a4-6c12e5dd4a3c|Programmable Objects\dsperr\Functions\BatchIsNotAllowedId.sql;687b14b6-8592-57eb-9a31-be8164527d13|Programmable Objects\dsperr\Stored Procedures\ThrowBatchIsNotAllowed.sql;ce6e6ea1-69d7-5771-9181-94e39a201f97|Programmable Objects\dsperr\Functions\DuplicateRequestExceptionId.sql;bc6a0157-d7c8-5a3d-b469-966724efd05a|Programmable Objects\dsperr\Stored Procedures\ThrowDuplicateRequestException.sql;9be58c27-a027-5d20-bd89-b074a21a88f6|Programmable Objects\dsperr\Functions\Error1Id.sql;1e30b59c-e708-59f4-8359-68d4e1dd7f03|Programmable Objects\dsperr\Stored Procedures\ThrowError1.sql;4b0ffbdf-f1a6-5cab-9d83-0cd490f6e12f|Programmable Objects\dsperr\Functions\Error2Id.sql;a529328d-92cb-57e1-b05e-3b6457071416|Programmable Objects\dsperr\Stored Procedures\ThrowError2.sql;9adbd59f-bdaf-558e-b6fc-19e8fa28de27|Programmable Objects\dsperr\Stored Procedures\ThrowFatalError.sql;650b1660-9364-5e94-8671-f6159906c030|Programmable Objects\dsperr\Stored Procedures\ThrowGeneralException.sql;9490752f-806a-5baa-88ca-80e0af5d894a|Programmable Objects\dsperr\Stored Procedures\ThrowInvalidArgument.sql;efa1414b-801c-5b41-884d-d64d6b306a35|Programmable Objects\dsperr\Functions\InvalidCaptchaId.sql;fc6bb6d7-4012-592f-9347-6280dbc369d8|Programmable Objects\dsperr\Stored Procedures\ThrowInvalidCaptcha.sql;34fecfdd-367e-5ccb-ba35-3d9f662402c8|Programmable Objects\dsperr\Functions\InvalidParamSignatureId.sql;6d0b8fa1-dd48-57ab-8235-832f863413a6|Programmable Objects\dsperr\Stored Procedures\ThrowInvalidParamSignature.sql;1dd1c23a-3848-5bed-ab8d-a0ced49eb841|Programmable Objects\dsperr\Functions\LockFailedId.sql;94c04bce-c5c5-53aa-8a79-c19f5beabf68|Programmable Objects\dsperr\Stored Procedures\ThrowLockFailed.sql;c7f74f42-b1cd-5b42-a88b-1af5e46e9d94|Programmable Objects\dsperr\Functions\NoOperationId.sql;91b3b13c-aed9-5970-ac5f-01353e8543f2|Programmable Objects\dsperr\Stored Procedures\ThrowNoOperation.sql;2aa619c3-ef2d-5e59-882d-e5edf6df9d8a|Programmable Objects\dsperr\Functions\NotImplemetedId.sql;ea46c89b-dc38-54ad-9a62-024b9cbee9cb|Programmable Objects\dsperr\Stored Procedures\ThrowNotImplemeted.sql;85d8c60b-2696-5ad5-8611-b2f081ba1089|Programmable Objects\dsperr\Functions\NotSupportedId.sql;53f10278-2ab3-56ec-8431-bb3c25b95bd0|Programmable Objects\dsperr\Stored Procedures\ThrowNotSupported.sql;6db07f50-afff-51b9-b1c0-dc3b0e7f0062|Programmable Objects\dsperr\Functions\ObjectIsInUseId.sql;671cceb2-63a0-5e57-b09c-97a5b138bffd|Programmable Objects\dsperr\Stored Procedures\ThrowObjectIsInUse.sql;32b89f48-75ff-54b2-8556-8217b90bb955|Programmable Objects\dsperr\Functions\PageSizeTooLargeId.sql;16df5baa-2c78-534d-8c12-00398a2b25bc|Programmable Objects\dsperr\Stored Procedures\ThrowPageSizeTooLarge.sql;36134a57-3cd0-5b7b-a518-2093f0c41958|Programmable Objects\dsperr\Functions\TooManyRequestId.sql;14ad38e9-4d04-5dd9-ba5c-3c00eb8de33f|Programmable Objects\dsperr\Stored Procedures\ThrowTooManyRequest.sql;2c99dd20-2812-589e-b3ba-84842195475b|Programmable Objects\dsperr\Stored Procedures\ThrowUnHandledException.sql;174e8dff-cb58-5bf9-9b43-2a326d9979f9|Programmable Objects\dsperr\Functions\UserIsDisabledId.sql;31059708-ea5d-5150-bcfd-fb7b279e2aee|Programmable Objects\dsperr\Stored Procedures\ThrowUserIsDisabled.sql;8f228c75-99d6-5966-937b-8254cf2af6d2|Programmable Objects\dsperr\Functions\ValidationErrorId.sql;75832f26-e213-5773-a9d2-2a35dfb46b7f|Programmable Objects\dsperr\Stored Procedures\ThrowValidationError.sql;09cb87d3-497c-5e61-91c9-9bd6975fef12|Programmable Objects\dspInboxMessage\Views\vw_MessagePattern.sql;156d53e9-ac43-529f-8cc5-67febf4a6607|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcess_$GetMessagePatternIdByCoding.sql;0cf22088-9418-5916-9596-e27445f4adc5|Programmable Objects\dspInboxMessage\Functions\MessagePattern_Search.sql;47cb1f2d-a374-5faa-99bc-d42137a0e3ae|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessage_CreateBulk.sql;d84a872c-5d6f-5da6-bde0-05dbf089bf24|Programmable Objects\dspInboxMessage\Stored Procedures\Setting_GetProps.sql;e8dc4276-a1a8-5ac2-9af9-f974db1d65a9|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessage_Refresh.sql;45c024fa-3c0d-5fd6-aee7-5bb7fc27d399|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$CheckCustomConfirmValueActivation.sql;7ed10824-9d39-58e9-94f1-55a1f5a15012|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$CreateWaitForReplyMessage.sql;0c2fa6ab-4ebe-5098-9760-b83701d726ce|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$SendReplyMessage.sql;f622cdf3-1b5d-506c-b5cc-c4de0cedb169|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_$MessagePatternStepItems.sql;1ecba197-e8a6-5539-8d09-d0c729f3b004|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_GetProps.sql;883095eb-5393-54f0-9b6d-69d4de1a9113|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_GetProps.sql;104e9b22-8861-5a61-9974-64d3b2173006|Programmable Objects\dspInboxMessage\Functions\MessageLastData_ReadJson.sql;2a06f759-17d8-5830-a89d-b5d8821e0975|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_NullExpression.sql;8d08b1d3-5643-5798-9bd4-400f11741216|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_ParameterSpecification.sql;63213c7f-59de-581e-aaa2-3f82e209500b|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$DoRunResponseProcedure.sql;1af21840-ff51-5cb4-ae37-1066e12fff67|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetMessagePatternIdByWaitForReply.sql;bf3e5177-9e89-5e80-926c-8477523f752c|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetAppropriatePatternId.sql;e0696108-442f-540a-8301-d57bbea8bf13|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetCustomValue.sql;4013133e-5454-5472-bac4-39127422507b|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetNextBulk.sql;7919e141-264d-5d77-a6b1-d8dea12c32d8|Programmable Objects\dspInboxMessage\Functions\MessagePatternStep_HasCustomConfirmValidation.sql;0dce9845-e77f-5559-8eed-3e66ac20d74e|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessCheckConfirmActivationStep.sql;42a8c1c3-c2bd-595c-81f0-d2b79ff8953b|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcess_$AppendToMessageLastData.sql;4ea31344-72a5-594b-9530-256e4c0a773f|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_DefaultValue.sql;5b3537c7-c213-52a6-897a-7e9772dc7d82|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_RandomNumber.sql;7766c1f5-5dba-5f9b-b5c1-84ec1cb56d57|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_RandomString.sql;89c39bd0-853b-5a82-9e26-082b07301287|Programmable Objects\dspInboxMessage\Stored Procedures\Message_$BuildByDynamicExpression.sql;0b8bf27b-8565-5145-8014-14c399315a8c|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ValidateCustomConfirmValue.sql;49166184-a366-5aea-bafb-bc7aeb5bd6c8|Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_ConfirmValue.sql;cc04d689-58d1-5b3e-8ed8-e4a15a582446|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessConfirmStep.sql;becf23b5-9850-5162-b548-50267020ce45|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessInputOutputStep.sql;5de64932-2545-5ffc-a64a-d3040c77b709|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessSendMessageStep.sql;8bbc331f-6fbb-5674-b961-bf09f8c25dc5|Programmable Objects\dsp\Functions\SplitStringByIndex.sql;ce35ea7e-b026-5768-9e16-7881c5452010|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessSteps.sql;97740206-f0aa-55e7-8697-4ce55c9bd657|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessItem.sql;e7a22de4-f5ea-5be0-a7a2-65a0b7f61f9a|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessItems.sql;3fa505a7-7c64-5673-bdee-78ee106e18cc|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessNotRegisteredAddress.sql;38fd06c3-4162-5014-a251-274d69572160|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$SetState.sql;fbae6e92-e8bc-554b-9921-70f79dfd8af4|Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_Refresh.sql;ab2ebcad-9421-5f43-818e-f9a029ea2cc9|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_$Validate.sql;5136aa4d-d056-5757-9a49-15cf55d0ae69|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_$Validate.sql;9a609705-3358-57d5-b909-aed2832307bd|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_Create.sql;1f578dff-347b-59c6-b189-2509c1c1357a|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_CreateBulk.sql;5773daa7-f462-5a91-8e31-bfbad07722c9|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_CreateCheckConfirmActivationStep.sql;aad8ef05-cca6-5184-a874-58695bf5ae7b|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_Create.sql;b1c2100b-1bee-5a70-a423-3b4278fb5676|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_Delete.sql;c0dbcaa6-113b-5fc4-be98-30ad1fe1cbe8|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_DeleteMessagePatternSteps.sql;12dfe48f-2d37-52f8-a274-f19e25803912|Programmable Objects\dsp\Functions\Param_IsSetForMaxSize.sql;255ab7f0-9bf2-5164-a6c2-b9edfda5f1f8|Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_SetProps.sql;18f8fd64-83f5-5720-a6e9-ea16534c983a|Programmable Objects\dspInboxMessage\Stored Procedures\ProviderInfo_GetProps.sql;708a19f7-f42f-5663-82f2-7d108abdcf5e|Programmable Objects\dspInboxMessage\Stored Procedures\Setting_SetProps.sql;5b305cdb-80cf-5744-b6b4-7a4cfb315903|Programmable Objects\dspstr\Functions\String1.sql;f101de1b-ad2f-5e25-9a07-3cd6cd04e94f|Programmable Objects\dspstr\Functions\String2.sql;1d959bc0-7482-5415-ae3a-82a623ef78c0|Programmable Objects\dsptest\Stored Procedures\ThrowFail.sql;dc61480d-ed15-5834-b042-f262e49b1e8f|Programmable Objects\dsptest\Stored Procedures\AssertEquals.sql;58d348fc-3172-5f23-b61b-793ca9256d74|Programmable Objects\dsptest\Stored Procedures\AssertEqualsJsonWithValue.sql;1869f9b5-e304-5645-b73a-9e990268f3a7|Programmable Objects\dsptest\Stored Procedures\AssertEqualsString.sql;7f1de455-6de3-56d0-b506-ffd58019a4b1|Programmable Objects\tSQLt\Functions\Private_SqlVariantFormatter.sql;90dabf5a-a158-5e6f-a45a-fc44f51395aa|Programmable Objects\dsptest\Stored Procedures\AssertNotEquals.sql;fe812190-b80b-56f5-ac75-ddc7ff1fe703|Programmable Objects\dsptest\Stored Procedures\Fail.sql;c5fb3fea-b48c-5cc7-ba77-75f48399ea52|Programmable Objects\err\Functions\AccessDeniedOrObjectNotExistsId.sql;266893ef-ac7f-5b26-afec-f2d2e376ef3c|Programmable Objects\err\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql;03579da0-3176-5546-b5b6-66c8309e39b4|Programmable Objects\err\Functions\AmbiguousExceptionId.sql;70c3feb3-f6e9-5768-96f7-a1afbaaac989|Programmable Objects\err\Stored Procedures\ThrowAmbiguousException.sql;a7d3671a-ff18-5918-97aa-af1d2888b869|Programmable Objects\err\Functions\BatchIsNotAllowedId.sql;9e0f00ff-c98a-5c21-9e52-3430b5c79432|Programmable Objects\err\Stored Procedures\ThrowBatchIsNotAllowed.sql;405482fa-b27a-5d0d-ac0b-9eb58e42b704|Programmable Objects\err\Functions\DuplicateRequestExceptionId.sql;360efc1e-5b0a-5cd9-82d5-6747f327b391|Programmable Objects\err\Stored Procedures\ThrowDuplicateRequestException.sql;70a3984e-3309-58e4-9a13-6bba1b134188|Programmable Objects\err\Functions\Error1Id.sql;1db88b48-9fb1-5bf7-be83-67419c9e1d7e|Programmable Objects\err\Stored Procedures\ThrowError1.sql;fd35abdd-4150-5ba6-8134-a9cabca530e7|Programmable Objects\err\Functions\Error2Id.sql;a1f945b7-3d9a-5ed4-b24b-c9395ab05d7a|Programmable Objects\err\Stored Procedures\ThrowError2.sql;268947c2-b72f-5224-8938-eb45b8586692|Programmable Objects\err\Functions\FatalErrorId.sql;a331485c-39d4-5033-b9a8-d16010da2300|Programmable Objects\err\Stored Procedures\ThrowFatalError.sql;469b6def-db59-57a9-be07-6137372cce5d|Programmable Objects\err\Functions\GeneralExceptionId.sql;21df1aac-4cba-5f41-b3b6-b86bef329db9|Programmable Objects\err\Stored Procedures\ThrowGeneralException.sql;0ec24eb2-51d1-557a-a016-ae2568a38973|Programmable Objects\err\Functions\InvalidCaptchaId.sql;5be0cce7-e62d-5ea0-af21-670e4e1ab833|Programmable Objects\err\Stored Procedures\ThrowInvalidCaptcha.sql;4a8c552c-4c7b-5911-b42c-7d57bc700a42|Programmable Objects\err\Functions\InvalidOperationId.sql;78d32946-d839-5b7e-b685-aed2bc15fc61|Programmable Objects\err\Stored Procedures\ThrowInvalidOperation.sql;d6985988-cd1a-5275-96db-6719182d6536|Programmable Objects\err\Functions\InvalidParamSignatureId.sql;5f06039c-2117-5535-86f9-667c60a8bbe4|Programmable Objects\err\Stored Procedures\ThrowInvalidParamSignature.sql;09762f74-f953-5ef4-86f2-a551d011672e|Programmable Objects\err\Functions\InvokerAppVersionId.sql;65fea322-9665-59d0-8d6c-ea5b26fcfe20|Programmable Objects\err\Stored Procedures\ThrowInvokerAppVersion.sql;23d54389-0897-5e13-a9a1-bf8d3884bc1a|Programmable Objects\err\Functions\LockFailedId.sql;e6f1c08c-db92-5e70-9b08-b33d2aaed616|Programmable Objects\err\Stored Procedures\ThrowLockFailed.sql;868854cc-f692-5f81-baa4-79682c8cb76d|Programmable Objects\err\Functions\MaintenanceId.sql;68505c16-82a8-5409-b158-3dbf4c51f266|Programmable Objects\err\Stored Procedures\ThrowMaintenance.sql;866a6932-1add-5699-b312-7d18864c595e|Programmable Objects\err\Functions\MaintenanceReadOnlyId.sql;c7caebc1-0044-530b-a906-f581735608dd|Programmable Objects\err\Stored Procedures\ThrowMaintenanceReadOnly.sql;66f0d63b-e792-5248-9c4d-e9ef242e32b4|Programmable Objects\err\Functions\NoOperationId.sql;b8e1d031-2953-5f6a-9239-5fe8111696c4|Programmable Objects\err\Stored Procedures\ThrowNoOperation.sql;bac98d7c-927d-524f-a71b-b9337ee32ee3|Programmable Objects\err\Functions\NotImplemetedId.sql;2d1777df-5f00-5c68-8c39-19eb08ef6522|Programmable Objects\err\Stored Procedures\ThrowNotImplemeted.sql;1431f0bb-595f-54cc-a5a4-cab8741b70fa|Programmable Objects\err\Functions\NotSupportedId.sql;64a4c9b5-ceb1-5966-a580-948020ab2d35|Programmable Objects\err\Stored Procedures\ThrowNotSupported.sql;b3f19ab7-5f50-546e-ac64-65075ee6b2f5|Programmable Objects\err\Functions\ObjectIsInUseId.sql;22295014-0f9c-5720-810e-2ea11c8d773b|Programmable Objects\err\Stored Procedures\ThrowObjectIsInUse.sql;3be1aeca-70e9-5675-9e84-6d3c0b92289e|Programmable Objects\err\Functions\TooManyRequestId.sql;036d104f-9615-5729-b629-a28247465a92|Programmable Objects\err\Stored Procedures\ThrowTooManyRequest.sql;fc831111-0ffe-5cb0-877c-790e5149e17c|Programmable Objects\err\Functions\UserIsDisabledId.sql;59fe7c34-38d9-5d62-b2d8-ee52afcade84|Programmable Objects\err\Stored Procedures\ThrowUserIsDisabled.sql;cf104fc4-69c5-5873-ace1-f69d41a2133f|Programmable Objects\err\Functions\ValidationErrorId.sql;23827743-438c-5ab0-90da-c1b783c143cb|Programmable Objects\err\Stored Procedures\ThrowValidationError.sql;69b16ab2-4916-5e56-aac0-56b2964080e7|Programmable Objects\tSQLt\Stored Procedures\Fail.sql;4cf53d4c-2b70-5477-a3d4-c0d40f35bed5|Programmable Objects\SQLCop\Stored Procedures\test Ad hoc distributed queries.sql;8629df2e-55e8-53c0-a18c-01890eb09a53|Programmable Objects\SQLCop\Stored Procedures\test Agent Service.sql;4cf9c979-7cb8-5a15-b1ed-e44b05912347|Programmable Objects\SQLCop\Stored Procedures\test Auto close.sql;e6d1f69d-29b5-5e80-83dc-5ca394ee9829|Programmable Objects\SQLCop\Stored Procedures\test Auto create statistics.sql;3059fec3-4161-5c95-af85-19bc481b8a44|Programmable Objects\SQLCop\Stored Procedures\test Auto Shrink.sql;b60cfa16-f7f6-51be-aafd-cbcef0ffeece|Programmable Objects\SQLCop\Stored Procedures\test Auto update statistics.sql;fe988d49-ba2c-577d-8c4c-ce8827a7511e|Programmable Objects\SQLCop\Stored Procedures\test Buffer cache hit ratio.sql;20fcc490-f0ae-541c-93a6-593611c5242e|Programmable Objects\SQLCop\Stored Procedures\test Column collation does not match database default.sql;5583159d-b8d8-5e2c-9962-378092c8469f|Programmable Objects\SQLCop\Stored Procedures\test Column data types (Numeric vs. Int).sql;09b76f4c-070d-5423-831c-ab75936de14f|Programmable Objects\SQLCop\Stored Procedures\test Column Name Problems.sql;533b174e-1e04-51b5-bad5-387b59d76f3f|Programmable Objects\SQLCop\Stored Procedures\test Columns of data type Text_nText.sql;ba00d811-6e8e-5dd7-b57f-1251b1ca94db|Programmable Objects\SQLCop\Stored Procedures\test Columns with float data type.sql;7a765bcc-43d2-5563-a8b1-1a637413f47e|Programmable Objects\SQLCop\Stored Procedures\test Columns with image data type.sql;46ca6e72-ff2a-5bf2-a07f-d128c0013619|Programmable Objects\SQLCop\Stored Procedures\test Compatibility Level.sql;ff323492-e206-57b5-ad25-56f4439f612e|Programmable Objects\SQLCop\Stored Procedures\test Database and Log files on the same disk.sql;f8016e10-de3c-5955-b5a1-5e58027f39af|Programmable Objects\SQLCop\Stored Procedures\test Database collation.sql;98b84fee-d8b5-51e5-be78-de6d6a48858a|Programmable Objects\SQLCop\Stored Procedures\test Database Mail.sql;ff6f34e0-27be-5138-aa37-ce30cb2ddeae|Programmable Objects\SQLCop\Stored Procedures\test Decimal Size Problem.sql;8d4c6937-f28d-5e64-8e3f-77c246ae8678|Programmable Objects\SQLCop\Stored Procedures\test Forwarded Records.sql;fbe163b7-d8f6-578a-a8ae-f546652e670e|Programmable Objects\SQLCop\Stored Procedures\test Fragmented Indexes.sql;35ef7299-c82b-5c51-b282-b362e7134a3b|Programmable Objects\SQLCop\Stored Procedures\test Instant File Initialization.sql;713ef6b5-e36f-58de-962f-bcdea439b86c|Programmable Objects\SQLCop\Stored Procedures\test Login Language.sql;62f961b7-3755-5560-b366-2f85daecc86f|Programmable Objects\SQLCop\Stored Procedures\test Max degree of parallelism.sql;434a7581-d19b-5226-8aaa-bfa24f5b819a|Programmable Objects\SQLCop\Stored Procedures\test Missing Foreign Key Indexes.sql;0b120f8f-8320-5afd-9a30-9c87c2acc8b9|Programmable Objects\SQLCop\Stored Procedures\test Missing Foreign Keys.sql;a2236372-663f-57ea-bc6e-d55be3867125|Programmable Objects\SQLCop\Stored Procedures\test Old Backups.sql;0880782a-a1f0-5286-9aec-98b1197c46c2|Programmable Objects\SQLCop\Stored Procedures\test Ole Automation Procedures.sql;9ad62bb0-d535-5313-937a-4df3d511a29f|Programmable Objects\SQLCop\Stored Procedures\test Orphaned Users.sql;93329c4f-cf98-5d7d-967d-6230609e23ca|Programmable Objects\SQLCop\Stored Procedures\test Page life expectancy.sql;57894b95-2d10-5fd9-ac2e-252fbcc7128e|Programmable Objects\SQLCop\Stored Procedures\test Procedures Named SP_.sql;081370a5-d3ce-5b90-a71e-d3e97ee7d22f|Programmable Objects\SQLCop\Stored Procedures\test Procedures that call undocumented procedures.sql;5634ac96-8544-5c0c-a939-4aa651284110|Programmable Objects\SQLCop\Stored Procedures\test Procedures using dynamic SQL without sp_executesql.sql;0facb8df-b264-5c9f-8fb6-755b81d2b370|Programmable Objects\SQLCop\Stored Procedures\test Procedures with @@Identity.sql;bc6a3537-e990-55c8-a37e-0a94360f20cd|Programmable Objects\SQLCop\Stored Procedures\test Procedures With SET ROWCOUNT.sql;fda7a8a2-6787-5ecf-b8b4-b52e99980d53|Programmable Objects\SQLCop\Stored Procedures\test Procedures without SET NOCOUNT ON.sql;6c53c1c2-7c5d-5c6b-a225-244b8d5a555e|Programmable Objects\SQLCop\Stored Procedures\test Service Account.sql;e135e3b0-40c3-5c9b-b67a-14367e63c7de|Programmable Objects\SQLCop\Stored Procedures\test SMO and DMO.sql;bd88cf15-384b-507c-aa56-d0c746894f22|Programmable Objects\SQLCop\Stored Procedures\test Table name problems.sql;d262def8-901f-5d04-8d1d-777d74874870|Programmable Objects\SQLCop\Stored Procedures\test Tables that start with tbl.sql;44cb1e87-eec0-57ed-9413-c8ff57f8ebd4|Programmable Objects\SQLCop\Stored Procedures\test Tables without a primary key.sql;1e088d3f-fd4b-5270-bccf-d57de5bc6441|Programmable Objects\SQLCop\Stored Procedures\test Tables without any data.sql;ecc8cb9c-1458-56f3-b42e-5b42dea416ae|Programmable Objects\SQLCop\Stored Procedures\test UniqueIdentifier with NewId.sql;a8b7c9ef-376a-53ed-b46b-b3a2cf27b28d|Programmable Objects\SQLCop\Stored Procedures\test Unnamed Constraints.sql;daba13dd-5c3d-5b24-87ba-c9c464ba9909|Programmable Objects\SQLCop\Stored Procedures\test User Aliases.sql;90f054cb-00f6-5138-af39-23daedc02ba4|Programmable Objects\SQLCop\Stored Procedures\test Varchar Size Problem.sql;b03cdc6c-3514-5fba-93dc-150fb5922950|Programmable Objects\SQLCop\Stored Procedures\test Views with order by.sql;b8437758-3e61-55ae-bc41-cddeb9713b13|Programmable Objects\SQLCop\Stored Procedures\test Wide Table.sql;24e700a4-d9c5-5b81-8e4e-d20f7c247ebb|Programmable Objects\SQLCop\Stored Procedures\test xp_cmdshell is enabled.sql;22ed50d5-32a4-54b4-83b6-b1aa6ba57f66|Programmable Objects\str\Functions\String1.sql;c2e36b0d-c1f2-577d-b031-378cd91e884a|Programmable Objects\str\Functions\String2.sql;4c6d1019-954f-536b-96ad-503d650784e4|Programmable Objects\tSQLt\Stored Procedures\AssertEquals.sql;243e189e-4b15-5b01-8484-91e11fb9d1d4|Programmable Objects\tClass\Stored Procedures\test Log_Create.sql;a0a3cde7-d77d-5dc9-a02b-71874ddd1c4b|Programmable Objects\tClass\Stored Procedures\test Log_Filter.sql;62746983-138e-5e1a-91e7-b5ca039a3eea|Programmable Objects\dsp\Functions\String_RemoveWhitespacesBig.sql;0cc9222c-a9cd-5c7d-87b5-a470f92aaa3d|Programmable Objects\tCodeQuality\Stored Procedures\Private_ColumnsWithBigintTypes.sql;2001631b-c539-5c38-abe4-efc722770134|Programmable Objects\tCodeQuality\Stored Procedures\Private_CompareConstFunctionReturnValueWithScriptValue.sql;27c08878-d182-532c-8a3b-8fb6315b77dd|Programmable Objects\tCodeQuality\Stored Procedures\test All Parameters should be used in Procedure.sql;400558e7-a133-599b-b09a-13cfe7682c3f|Programmable Objects\dsp\Functions\String_RemoveWhitespaces.sql;eed00eac-4704-5e33-9e5f-14453827568b|Programmable Objects\tCodeQuality\Stored Procedures\test API must have Context TCONTEXT OUT.sql;dcb4c1e1-ceb3-51c0-8d5b-0596fb10a591|Programmable Objects\tCodeQuality\Stored Procedures\test API must have Context_Verify.sql;f0ba6803-d9dc-5c11-882c-4cedf82b790e|Programmable Objects\tCodeQuality\Stored Procedures\test API must have WITH EXECUTE AS OWNER.sql;0a25f99b-cb74-5524-ba52-19ace65d8638|Programmable Objects\tCodeQuality\Stored Procedures\test const Functions must have WITH SCHEMABINDING.sql;5af78231-23fc-517d-82f2-e1d0b7e0ced7|Programmable Objects\tCodeQuality\Stored Procedures\test DataAccessMode annotation existance in proc.sql;13d606bd-f4aa-5a4f-90c0-9771d70a15e8|Programmable Objects\tCodeQuality\Stored Procedures\test dbo should not have WITH EXECUTE AS OWNER.sql;8596fd49-77e9-5e47-9673-8e4cfa229ece|Programmable Objects\tCodeQuality\Stored Procedures\test Declare BIGINT.sql;b018cabe-9fbb-55c4-9c03-4779e5976313|Programmable Objects\tCodeQuality\Stored Procedures\test Declare generic types INT, TSTRING.sql;1088e233-3679-5f95-a56e-54d1ec409552|Programmable Objects\tCodeQuality\Stored Procedures\test Description must be nvarchar(max).sql;e6582c00-0d87-543d-9797-bb82485c977e|Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with dsptest schema which not in test functioncs- for existing functions.sql;12bd73c1-155c-52be-b17e-9186c9e05f5d|Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with dsptest schema which not in test Functioncs.sql;1e7e6487-1c08-54a2-bfaa-f923386f02c3|Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with tSQLt schema in test functioncs- for existing functions.sql;6e445bc1-7b0d-5c60-817b-68487033189a|Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with tSQLt schema in test functioncs.sql;7cd9952e-9f1d-575b-9662-3613295d7861|Programmable Objects\tCodeQuality\Stored Procedures\test None of tests should have RETURN phrase.sql;afacb1df-57b7-54cf-bd84-50d9a7a687e7|Programmable Objects\tCodeQuality\Stored Procedures\test Pagination.sql;aaa5b86d-e842-594e-b84e-f0cd3b84f45d|Programmable Objects\tCodeQuality\Stored Procedures\test Relations for ForeignKeys.sql;0a42a744-26b9-5425-bab5-88c05cad3bde|Programmable Objects\tCodeQuality\Stored Procedures\test Table with IsDeleted Field must have vw... View &amp; ..._GetProps Procedure.sql;e88e81a7-ec8f-53cc-99b6-7e22c189eb37|Programmable Objects\tCodeQuality\Stored Procedures\test ValidateSubstitutionOfFunctioncallWithInteger.sql;4c6a6623-374a-5e2a-988c-6536421f8873|Programmable Objects\tCodeQuality\Stored Procedures\test Wrong use of Private class.sql;2160ed82-0786-55e5-9c8a-52d5174ec33e|Programmable Objects\tSQLt\Functions\Private_SqlVersion.sql;1129acc8-4c9b-59b1-83db-43ddb57a9124|Programmable Objects\tSQLt\Functions\Info.sql;0bae336e-d096-51df-86f4-10e1fd36670b|Programmable Objects\tSQLt\Functions\Private_GetOriginalTableInfo.sql;6a468f79-dc22-5948-ba5d-47de132e412c|Programmable Objects\tSQLt\Functions\Private_FindConstraint.sql;b1c9ac49-50ce-5d01-ab7b-9debb97c1ad7|Programmable Objects\tSQLt\Views\Private_SysTypes.sql;4e92093b-dcdc-5f2c-ac27-84a112553672|Programmable Objects\tSQLt\Functions\Private_GetFullTypeName.sql;db78c1ae-9368-5c4d-b2ef-d604d697332e|Programmable Objects\tSQLt\Functions\Private_GetDataTypeOrComputedColumnDefinition.sql;e4495b62-e6de-5afa-a740-90de2bb65079|Programmable Objects\tSQLt\Functions\Private_GetForeignKeyRefColumns.sql;fd9eb96b-32a3-5c1f-ae8f-e4d31a058c37|Programmable Objects\tSQLt\Functions\Private_GetForeignKeyParColumns.sql;b902f2e1-4348-5362-a6e4-98b23c42fbb0|Programmable Objects\tSQLt\Functions\Private_GetForeignKeyDefinition.sql;759753a7-0980-575d-9c38-430e1aef855f|Programmable Objects\tSQLt\Functions\Private_GetUniqueConstraintDefinition.sql;a6d31f13-e155-53cd-9e35-316f7a5cb51e|Programmable Objects\tSQLt\Functions\Private_GetSchemaId.sql;0dbca57c-a243-54f8-821a-f4a7bef83cd7|Programmable Objects\tSQLt\Views\TestClasses.sql;f614e174-5cc6-5c9b-bae6-eb1ec0fa67f7|Programmable Objects\tSQLt\Functions\Private_IsTestClass.sql;e8320a4e-70b6-5984-b0f2-de927da211d3|Programmable Objects\tSQLt\Functions\Private_ResolveApplyConstraintParameters.sql;37eb7ad2-4c85-509c-9b81-9f9140d16fe8|Programmable Objects\tSQLt\Functions\Private_ResolveObjectName.sql;7f6c8657-296b-5285-96af-7563234edd72|Programmable Objects\tSQLt\Functions\Private_ResolveSchemaName.sql;4c469b76-c5c0-50f1-93a7-a34b1dd57f38|Programmable Objects\tSQLt\Functions\Private_ResolveName.sql;679d77f0-19ca-5ba2-aa29-5f4d14cbcf21|Programmable Objects\tSQLt\Views\Private_SysIndexes.sql;a89ac78b-207d-5b3f-b9cc-df3eb44ec611|Programmable Objects\tSQLt\Functions\Private_ScriptIndex.sql;36d277d9-bb1c-5ecd-8935-b7242d7b6eac|Programmable Objects\tSQLt\Stored Procedures\SuppressOutput.sql;e836289c-c7ca-5cc9-acb6-d11a98fa8b81|Programmable Objects\tSQLt\Stored Procedures\Private_MarkObjectBeforeRename.sql;bcb0538e-e521-5e76-9592-4ff3fe6754f7|Programmable Objects\tSQLt\Stored Procedures\Private_RenameObjectToUniqueName.sql;953926ad-18d3-56eb-a7af-cb37930eec6f|Programmable Objects\tSQLt\Functions\Private_GetQuotedTableNameForConstraint.sql;a254966e-ea32-5421-ab7c-8efb9a31fbd0|Programmable Objects\tSQLt\Stored Procedures\Private_ApplyUniqueConstraint.sql;28264d77-c9ea-5c85-9f9a-853dcab16a96|Programmable Objects\tSQLt\Stored Procedures\Private_ApplyForeignKeyConstraint.sql;c2e8aa01-97b2-55fd-ada5-922958dfbd2e|Programmable Objects\tSQLt\Stored Procedures\Private_RenameObjectToUniqueNameUsingObjectId.sql;c76156c3-8d97-5af2-bf12-1cc0daa7b6ad|Programmable Objects\tSQLt\Stored Procedures\Private_ApplyCheckConstraint.sql;dc90f566-cfd6-5354-970b-af76821d69ed|Programmable Objects\tSQLt\Stored Procedures\ApplyConstraint.sql;1fee5f21-f676-5fef-9d3a-cfcfa8971ff4|Programmable Objects\tSQLt\Stored Procedures\RemoveObject.sql;eca620b2-2232-595a-8296-911de1e6014e|Programmable Objects\tSQLt\Stored Procedures\ApplyTrigger.sql;8ccbc1b6-124b-5c1b-a3f0-ba244e5659c0|Programmable Objects\tSQLt\Stored Procedures\TableToText.sql;1aba1f3f-2736-5377-86ea-36bf548b7d55|Programmable Objects\tSQLt\Functions\Private_GetQuotedFullName.sql;375118cf-24bc-5859-849e-aca2ef2ca3c6|Programmable Objects\tSQLt\Stored Procedures\AssertObjectExists.sql;ab56a95e-ea0c-567f-a992-043c9cd0b99f|Programmable Objects\tSQLt\Stored Procedures\AssertEmptyTable.sql;60dda544-6976-5e06-86a0-d89b20f2a674|Programmable Objects\tSQLt\Stored Procedures\AssertEqualsString.sql;0a87f863-e06a-55f2-8610-bf7ba1e821f1|Programmable Objects\tSQLt\Stored Procedures\Private_CompareTablesFailIfUnequalRowsExists.sql;f17d6c08-e648-5d82-b3f0-fad3bc73edb2|Programmable Objects\tSQLt\Stored Procedures\Private_CompareTables.sql;94b4450e-8a25-5d2d-8b70-5a5b85c08a76|Programmable Objects\tSQLt\Stored Procedures\Private_ValidateThatAllDataTypesInTableAreSupported.sql;5558590f-f32f-5488-a901-76b2e4f753b1|Programmable Objects\tSQLt\Functions\Private_GetCommaSeparatedColumnList.sql;bf8b8cfc-c5a2-5cb6-a857-11653e40bd8c|Programmable Objects\tSQLt\Stored Procedures\Private_CreateResultTableForCompareTables.sql;c7939a94-b8a4-5a57-a8b3-177dc70f1271|Programmable Objects\tSQLt\Stored Procedures\AssertEqualsTable.sql;ffbc754b-319d-58f0-8e55-f539889e9bcd|Programmable Objects\tSQLt\Stored Procedures\AssertEqualsTableSchema.sql;34e9412b-2ce0-5d50-8e1a-dca5cb217f29|Programmable Objects\tSQLt\Stored Procedures\AssertLike.sql;29dcd203-71ba-537f-b978-a9d93e3967d6|Programmable Objects\tSQLt\Stored Procedures\AssertNotEquals.sql;d7f791e1-5444-53e6-bcfd-cfb4fcb3cd79|Programmable Objects\tSQLt\Stored Procedures\AssertObjectDoesNotExist.sql;9f537584-2428-5b4f-8dba-469d1bb60b25|Programmable Objects\tSQLt\Stored Procedures\AssertStringIn.sql;ec7bdad9-1b16-534e-9579-2f51454a4e77|Programmable Objects\tSQLt\Stored Procedures\Private_Print.sql;80a93992-b8ea-5334-86ea-b6a90c5cb6c0|Programmable Objects\tSQLt\Functions\TestCaseSummary.sql;0598c04a-c972-5ef3-8ab4-4409a6242d14|Programmable Objects\tSQLt\Stored Procedures\DefaultResultFormatter.sql;7d3f0189-630d-53ac-808f-99ae9fa169ce|Programmable Objects\tSQLt\Stored Procedures\Private_CreateFakeFunction.sql;d964ed14-a88b-5a0b-aa18-6181d8889b9c|Programmable Objects\tSQLt\Stored Procedures\Private_ValidateObjectsCompatibleWithFakeFunction.sql;387840f3-29e8-590b-8889-c30f98b30a6b|Programmable Objects\tSQLt\Stored Procedures\FakeFunction.sql;d97fa1a9-5127-58d0-9705-52f4c02ac024|Programmable Objects\tSQLt\Stored Procedures\Private_MarkFakeTable.sql;252ebf93-887a-5f12-a359-aae561ce5f6b|Programmable Objects\tSQLt\Functions\Private_GetIdentityDefinition.sql;e889e6df-ddef-5386-afbf-44bf906150fd|Programmable Objects\tSQLt\Functions\Private_GetDefaultConstraintDefinition.sql;e932fa34-3967-578d-b251-8f91b25541f8|Programmable Objects\tSQLt\Stored Procedures\Private_CreateFakeOfTable.sql;9c2a9879-a354-5fe5-8dc9-506a10cf9944|Programmable Objects\tSQLt\Stored Procedures\Private_ValidateFakeTableParameters.sql;a91ef07b-88b0-5d75-9566-754b7f3e43c7|Programmable Objects\tSQLt\Functions\Private_ResolveFakeTableNamesForBackwardCompatibility.sql;b48a3906-7745-55ec-8438-11fcc10998fe|Programmable Objects\tSQLt\Stored Procedures\FakeTable.sql;ce754fc0-32a5-55b3-a402-98d742265f71|Programmable Objects\tSQLt\Functions\Private_Bin2Hex.sql;c4d10b77-296c-5620-9be4-37408421ec29|Programmable Objects\tSQLt\Functions\Private_GetExternalAccessKeyBytes.sql;f16b4d80-fe6a-5126-b333-377c91554634|Programmable Objects\tSQLt\Stored Procedures\InstallExternalAccessKey.sql;d10e1f16-196b-5868-903d-4259e9efff19|Programmable Objects\tSQLt\Stored Procedures\Private_MarkSchemaAsTestClass.sql;f58529c6-62e6-575b-ad43-2679a95cd3b5|Programmable Objects\tSQLt\Functions\Private_QuoteClassNameForNewTestClass.sql;61b1a635-1f96-5d67-b5b4-1873f3593a56|Programmable Objects\tSQLt\Stored Procedures\DropClass.sql;51df215b-3fe5-58df-bbb0-3ca6895c73b6|Programmable Objects\tSQLt\Stored Procedures\Private_DisallowOverwritingNonTestSchema.sql;67115271-1cb5-5aa8-8601-a4f08a2db845|Programmable Objects\tSQLt\Stored Procedures\NewTestClass.sql;68a19545-21eb-5727-a13b-1edc24aef2dd|Programmable Objects\tSQLt\Stored Procedures\Private_CreateProcedureSpy.sql;d5f71261-39ca-5493-9a8a-73d8abf06b8e|Programmable Objects\tSQLt\Stored Procedures\Private_GetCursorForRunAll.sql;0c62bea7-f554-5b95-b29d-ade706d15519|Programmable Objects\tSQLt\Stored Procedures\Private_GetCursorForRunNew.sql;70894fab-5aad-5684-a513-5300176c48e3|Programmable Objects\tSQLt\Stored Procedures\Private_GetSetupProcedureName.sql;72dbcd0f-e66c-56f7-9f7b-95851a192e4f|Programmable Objects\tSQLt\Stored Procedures\EnableExternalAccess.sql;3cd5fa1f-d39c-5e86-a4ad-fa860d9e1d14|Programmable Objects\tSQLt\Stored Procedures\Private_CleanTestResult.sql;fb155afe-cbf6-5a09-8593-acd9ecdbc584|Programmable Objects\tSQLt\Stored Procedures\Private_Init.sql;2dbe9ddf-7c31-580f-be49-a4e977d481a2|Programmable Objects\tSQLt\Functions\GetTestResultFormatter.sql;ade5e63a-f959-5403-8d10-2e72b6162710|Programmable Objects\tSQLt\Stored Procedures\Private_OutputTestResults.sql;d7f5293b-b108-566c-9be2-dd0fd171a964|Programmable Objects\tSQLt\Functions\Private_GetCleanObjectName.sql;1bf24099-3bcb-5846-aa21-0e14f1934f6f|Programmable Objects\tSQLt\Functions\Private_GetConfiguration.sql;29c8b6b5-cc9e-5127-b253-9c8a73c9359d|Programmable Objects\tSQLt\Stored Procedures\GetNewTranName.sql;c84b5d7f-a68f-56b7-9ff1-af1310bb2a00|Programmable Objects\tSQLt\Stored Procedures\Private_RunTest.sql;8ab690e8-f1e3-5af1-b43b-de3bff4c6414|Programmable Objects\tSQLt\Stored Procedures\Private_RunTestClass.sql;7c932c04-6d64-5745-8b74-14d7aaafbfa1|Programmable Objects\tSQLt\Stored Procedures\Private_SaveTestNameForSession.sql;cdb7eac1-fdda-5e81-add2-137ea8082353|Programmable Objects\tSQLt\Functions\Private_GetLastTestNameIfNotProvided.sql;4706e8b9-8e46-5690-a930-c91d16706945|Programmable Objects\tSQLt\Stored Procedures\Private_Run.sql;a3105da6-32a1-5833-b619-16c1927dc214|Programmable Objects\tSQLt\Stored Procedures\Private_RunCursor.sql;dd11fbfd-c6a3-5044-84cd-0f9e69d7f7ea|Programmable Objects\tSQLt\Stored Procedures\Private_RunAll.sql;a7714614-52bb-51e4-8f20-d643e7f4e743|Programmable Objects\tSQLt\Stored Procedures\Private_RunMethodHandler.sql;eb40a856-efb2-58b0-ab3d-89b039a99f09|Programmable Objects\tSQLt\Stored Procedures\Private_RunNew.sql;bec64edb-1b41-5a87-82bd-1ffd7bbbacc6|Programmable Objects\tSQLt\Stored Procedures\RemoveObjectIfExists.sql;4d583ae6-3c5f-5a96-a86e-549df449e52e|Programmable Objects\tSQLt\Stored Procedures\RenameClass.sql;3214779d-50f5-5abe-a13e-e7fc679aa733|Programmable Objects\tSQLt\Stored Procedures\Private_ResetNewTestClassList.sql;6c06a4c7-9f6f-5708-ad4d-a40bd78e071e|Programmable Objects\tSQLt\Stored Procedures\Reset.sql;14b74a9f-b39e-58b3-82df-89fdfe8f1848|Programmable Objects\tSQLt\Stored Procedures\Run.sql;eccdbe5c-54e7-5ce7-a0f9-69bea6425422|Programmable Objects\tSQLt\Stored Procedures\RunAll.sql;b83b461f-94cb-5912-ae01-6de8b334f712|Programmable Objects\tSQLt\Stored Procedures\Private_InputBuffer.sql;4ad8cc5f-434c-5c15-ac33-1487d0ac9f74|Programmable Objects\tSQLt\Stored Procedures\RunC.sql;fef89f71-d501-5a94-9752-fe0ddfada462|Programmable Objects\tSQLt\Stored Procedures\RunNew.sql;7d120fda-a9b6-596c-8b38-b526a8b99981|Programmable Objects\tSQLt\Stored Procedures\RunTestClass.sql;609521ce-ca11-5542-ba7d-4b4fae4afa97|Programmable Objects\tSQLt\Stored Procedures\RunWithNullResults.sql;61695f2f-71ef-5c8b-ac8c-ca04e671d840|Programmable Objects\tSQLt\Stored Procedures\RunWithXmlResults.sql;b68a3fdb-461e-517b-bc37-ffde7d3bc62b|Programmable Objects\tSQLt\Stored Procedures\Private_SetFakeViewOff_SingleView.sql;e3b61876-9707-5e23-92fb-51ec667534ab|Programmable Objects\tSQLt\Stored Procedures\SetFakeViewOff.sql;2c9b107c-2727-51f0-bc3a-9040c8dd376e|Programmable Objects\tSQLt\Stored Procedures\Private_SetFakeViewOn_SingleView.sql;73c21d72-162a-5bf1-a1a2-193f0ebedf1b|Programmable Objects\tSQLt\Stored Procedures\SetFakeViewOn.sql;b3f05d76-3653-5c03-9904-81b8c67755f7|Programmable Objects\tSQLt\Stored Procedures\Private_SetConfiguration.sql;bb7560db-8602-5534-afa4-cc5b32f6e755|Programmable Objects\tSQLt\Stored Procedures\SetVerbose.sql;9ace0f6b-dc42-5a44-a389-c7f17b2a3301|Programmable Objects\tSQLt\Stored Procedures\Private_ValidateProcedureCanBeUsedWithSpyProcedure.sql;3851e198-caf8-5a65-80a2-537f12d64818|Programmable Objects\tSQLt\Stored Procedures\SpyProcedure.sql;70ca5842-de9a-538b-8e77-472c4710c45a|Programmable Objects\tSQLt\Stored Procedures\Uninstall.sql;68257541-74b6-5850-be15-41c098cb0c51|Programmable Objects\tSQLt\Stored Procedures\Private_PrintXML.sql;6fcf65d0-c965-5871-8d06-6af64c14c038|Programmable Objects\tSQLt\Stored Procedures\XmlResultFormatter.sql;7a3c8d19-b3e0-5f51-89f6-82b37c9b223f|Programmable Objects\tSQLt\Views\Tests.sql</DeployChangesExecutionOrder>
+  </PropertyGroup>
+  <!-- SQL CHANGE AUTOMATION OFFLINE SCHEMA MODEL OPTIONS -->
+  <PropertyGroup>
+    <SyncToOfflineSchemaModel>True</SyncToOfflineSchemaModel>
+    <!--
+    <SyncToOfflineSchemaModelBySchema>True</SyncToOfflineSchemaModelBySchema>
+    <SyncToOfflineSchemaModelObjectTypes>Table;Assembly;Contract;Default;EventNotification;FullTextCatalog;FullTextStoplist;MessageType;PartitionFunction;PartitionScheme;Queue;ServiceBinding;Role;Route;Rule;Schema;SearchPropertyList;Service;Sequence;Synonym;User;UserDefinedType;XmlSchemaCollection</SyncToOfflineSchemaModelObjectTypes>
+    <SchemaModelSubFolder>Schema-Model</SchemaModelSubFolder>
+    -->
+  </PropertyGroup>
+  <!-- SQL CHANGE AUTOMATION PROGRAMMABLE OBJECT OPTIONS -->
+  <PropertyGroup>
+    <ProgrammableObjectHandling>UseRepeatableScriptsForAllObjects</ProgrammableObjectHandling>
+    <!--
+    <DeployChangesInitialImportDone>False</DeployChangesInitialImportDone>
+    <DeployChangesImportObjectTypes>StoredProcedure;Function;View;DdlTrigger</DeployChangesImportObjectTypes>
+    <DeployChangesSubFolder>Deploy-Changes</DeployChangesSubFolder>
+    -->
+  </PropertyGroup>
+  <!-- SQL CHANGE AUTOMATION SCRIPT GENERATION OPTIONS -->
+  <PropertyGroup>
+    <!-- These properties might be set by the Developer -->
+    <!--
+    <SyncOptionIncludeDependentObjects>False</SyncOptionIncludeDependentObjects>
+    <SyncOptionIncludeExistenceChecks>False</SyncOptionIncludeExistenceChecks>
+    <SyncOptionUseDropCreateInsteadOfAlter>False</SyncOptionUseDropCreateInsteadOfAlter>
+    <SyncOptionDisableDdlTriggers>False</SyncOptionDisableDdlTriggers>
+    <SyncOptionCaseSensitiveObjectDefinition>False</SyncOptionCaseSensitiveObjectDefinition>
+
+    <SyncOptionIgnoreExtendedProperties>False</SyncOptionIgnoreExtendedProperties>
+    <SyncOptionIgnoreCommentsInBodies>False</SyncOptionIgnoreCommentsInBodies>
+    <SyncOptionIgnoreAnsiOptions>False</SyncOptionIgnoreAnsiOptions>
+    <SyncOptionIgnoreCollations>True</SyncOptionIgnoreCollations>
+    <SyncOptionIgnoreColumnsOrder>True</SyncOptionIgnoreColumnsOrder>
+    <SyncOptionIgnoreWhiteSpace>True</SyncOptionIgnoreWhiteSpace>
+    <SyncOptionIgnoreSynonymDatabaseAndServerName>True</SyncOptionIgnoreSynonymDatabaseAndServerName>
+    <SyncOptionIgnoretSQLt>True</SyncOptionIgnoretSQLt>
+    <SyncOptionIgnoreDmlTriggers>False</SyncOptionIgnoreDmlTriggers>
+    <SyncOptionIgnoreInsteadOfTriggers>False</SyncOptionIgnoreInsteadOfTriggers>
+    <SyncOptionIgnoreBindings>False</SyncOptionIgnoreBindings>
+    <SyncOptionIgnoreQueueEventNotifications>False</SyncOptionIgnoreQueueEventNotifications>
+    <SyncOptionIgnoreSquareBrackets>False</SyncOptionIgnoreSquareBrackets>
+    <SyncOptionIgnoreWithElementOrder>True</SyncOptionIgnoreWithElementOrder>
+    <SyncOptionIgnoreWithEncryption>False</SyncOptionIgnoreWithEncryption>
+    -->
+    <!-- These properties might be set by the DBA -->
+    <!--  SyncOptionIgnoreDataspaces maps to SQL Compare's option IgnoreFileGroupsPartitionSchemesAndPartitionFunctions -->
+    <!--
+    <SyncOptionIgnoreDataspaces>True</SyncOptionIgnoreDataspaces>
+    <SyncOptionIgnoreConstraintNotForReplicationAttribute>True</SyncOptionIgnoreConstraintNotForReplicationAttribute>
+    <SyncOptionIgnoreFillFactor>True</SyncOptionIgnoreFillFactor>
+    <SyncOptionIgnoreIndexLockAttributes>False</SyncOptionIgnoreIndexLockAttributes>
+    <SyncOptionIgnoreStatistics>True</SyncOptionIgnoreStatistics>
+    <SyncOptionIgnoreDataCompression>True</SyncOptionIgnoreDataCompression>
+    <SyncOptionIgnoreFullTextIndexing>False</SyncOptionIgnoreFullTextIndexing>
+    <SyncOptionIgnoreReplicationTriggers>True</SyncOptionIgnoreReplicationTriggers>
+    <SyncOptionIgnoreSchemaObjectAuthorization>False</SyncOptionIgnoreSchemaObjectAuthorization>
+    <SyncOptionIgnoreStatisticsNorecompute>False</SyncOptionIgnoreStatisticsNorecompute>
+    <SyncOptionConsiderNextFilegroupInPartitionSchemes>False</SyncOptionConsiderNextFilegroupInPartitionSchemes>
+    -->
+    <!-- Shared Developer/DBA options -->
+    <!--
+    <SyncOptionIgnoreIndexes>False</SyncOptionIgnoreIndexes>
+    <SyncOptionIgnorePermissions>False</SyncOptionIgnorePermissions>
+    <SyncOptionIgnoreConstraintWithNoCheckAttribute>True</SyncOptionIgnoreConstraintWithNoCheckAttribute>
+    <SyncOptionIgnoreNocheckAndWithNocheckAttributes>False</SyncOptionIgnoreNocheckAndWithNocheckAttributes>
+    <SyncOptionIgnoreIdentitySeedAndIncrement>False</SyncOptionIgnoreIdentitySeedAndIncrement>
+    <SyncOptionIgnoreUserProperties>True</SyncOptionIgnoreUserProperties>
+    <SyncOptionIgnoreUsersPermissionsAndRoleMemberships>False</SyncOptionIgnoreUsersPermissionsAndRoleMemberships>
+    <SyncOptionAddWithEncryption>False</SyncOptionAddWithEncryption>
+    <SyncOptionDecryptEncryptedObjects>True</SyncOptionDecryptEncryptedObjects>
+    <SyncOptionUseCompatibilityLevel>False</SyncOptionUseCompatibilityLevel>
+    -->
+    <!-- Data comparison/sync options -->
+    <!--
+    <SyncDataOptionDropKeysIndexesAndConstraints>False</SyncDataOptionDropKeysIndexesAndConstraints>
+    <SyncDataOptionDisableForeignKeys>False</SyncDataOptionDisableForeignKeys>
+    <SyncDataOptionIncludeTimestampColumns>False</SyncDataOptionIncludeTimestampColumns>
+    <SyncDataOptionCaseSensitiveObjectDefinition>True</SyncDataOptionCaseSensitiveObjectDefinition>
+    <SyncDataOptionForceBinaryCollation>True</SyncDataOptionForceBinaryCollation>
+    <SyncDataOptionTrimTrailingSpaces>False</SyncDataOptionTrimTrailingSpaces>
+    <SyncDataOptionDisableDmlTriggers>False</SyncDataOptionDisableDmlTriggers>
+    <SyncDataOptionDisableDdlTriggers>True</SyncDataOptionDisableDdlTriggers>
+    <SyncDataOptionDontIncludeCommentsInScript>False</SyncDataOptionDontIncludeCommentsInScript>
+    <SyncDataOptionReseedIdentityColumns>False</SyncDataOptionReseedIdentityColumns>
+    <SyncDataOptionSkipIntegrityChecksForForeignKeys>False</SyncDataOptionSkipIntegrityChecksForForeignKeys>
+    <SyncDataOptionTransportClrDataTypesAsBinary>False</SyncDataOptionTransportClrDataTypesAsBinary>
+    <SyncDataOptionCompressTemporaryFiles>False</SyncDataOptionCompressTemporaryFiles>
+    <SyncDataOptionTreatEmptyStringAsNull>False</SyncDataOptionTreatEmptyStringAsNull>
+    <SyncDataOptionUseChecksumComparison>False</SyncDataOptionUseChecksumComparison>
+    <SyncDataOptionUseMaxPrecisionForFloatComparison>False</SyncDataOptionUseMaxPrecisionForFloatComparison>
+    -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--Import the settings-->
+  <PropertyGroup>
+    <AppDataPath>$(LOCALAPPDATA)</AppDataPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(AppDataPath)==''">
+    <AppDataPath>$(APPDATA)</AppDataPath>
+  </PropertyGroup>
+  <Import Condition="Exists('$(SqlChangeAutomationTargetsPath)')" Project="$(SqlChangeAutomationTargetsPath)" />
+  <Import Condition="!Exists('$(SqlChangeAutomationTargetsPath)')" Project="$(MSBuildExtensionsPath)\SqlChangeAutomation\SqlChangeAutomation.Data.Schema.Ssdt.targets" />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Provisioning\" />
+    <Folder Include="Pre-Deployment\" />
+    <Folder Include="Post-Deployment\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Migrations\1.0.0-Baseline" />
+    <Folder Include="Migrations\1.1.0-Changes" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Provisioning\CreateDatabase.sql" />
+    <None Include="Provisioning\DropDatabase.sql" />
+    <None Include="Migrations\1.0.0-Baseline\001_20201217-2322_Amirhossein.sql" />
+    <None Include="Programmable Objects\api\Stored Procedures\$$ResponseProcedureName1$$.sql" />
+    <None Include="Programmable Objects\api\Stored Procedures\Log_Create.sql" />
+    <None Include="Programmable Objects\api\Stored Procedures\Log_Filter.sql" />
+    <None Include="Programmable Objects\api\Stored Procedures\System_Api.sql" />
+    <None Include="Programmable Objects\const\Functions\Application_IcLoyalty.sql" />
+    <None Include="Programmable Objects\const\Functions\UserName_App.sql" />
+    <None Include="Programmable Objects\const\Functions\UserName_System.sql" />
+    <None Include="Programmable Objects\const\Functions\UserName_SystemAdmin.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Functions\Table_Columns.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Functions\Table_HasColumnName.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Functions\Table_HasExtendedProperty.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Functions\Table_SyncDataScript.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Database_CompareTablesStructure.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Databaseversioning_DisableTemporal.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\DatabaseVersioning_EnableTemporal.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Init_$InitSettings.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Init_FillLookups.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Setting_GetProps.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Setting_SetProps.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\SystemTable_SetLevelPriority.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\SystemTable_SetTemporalType.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetLookupData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetMaxTimeValue.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetOrdinaryData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetTemporalData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_GetTransactionalData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_SyncAllData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Table_SyncData.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\TableProcess_Refresh.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Stored Procedures\Validate_Mirroring.sql" />
+    <None Include="Programmable Objects\DatabaseVersioning\Views\vw_UserDefinedTables.sql" />
+    <None Include="Programmable Objects\dbo\Functions\FTest.sql" />
+    <None Include="Programmable Objects\dbo\Functions\Log_Filter.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_$CreateUsersAndRoles.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_$InitSettings.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_Cleanup.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_FillData.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_FillExceptions.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_FillLookups.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Init_FillStrings.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Log_Create.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Setting_GetProps.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\Setting_SetProps.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\User_CreateByAuthId.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\User_CreateByAuthUserName.sql" />
+    <None Include="Programmable Objects\dbo\Stored Procedures\User_UserIdByAuthUserId.sql" />
+    <None Include="Programmable Objects\dsp\Functions\App_LatestVersionNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\AppVersion_Details.sql" />
+    <None Include="Programmable Objects\dsp\Functions\CheckIfChanged_Int.sql" />
+    <None Include="Programmable Objects\dsp\Functions\CheckIfChanged_String.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Const_Algorithm_PBKDF2_SHA512.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Const_MaintenanceMode_Block.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Const_MaintenanceMode_None.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Const_MaintenanceMode_Readonly.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Context_UserId.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Convert_BinaryFromBase64.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Convert_BinaryToBase64.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Convert_RowVersionToString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Convert_ToSqlvariant.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Convert_ToString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\CRYPT_PBKDF2_VARBINARY_SHA512.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Database_$FunctionTypeName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Database_CheckPrimaryOnTables.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Database_IsReadOnly.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Database_ServerName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_ConvertLocalToUTC.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_ConvertUTCLocal.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_DatePart.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_EndOfDayTime.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_FisrtNextDayOfWeek.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_FormatInterval.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_FormatIntervalMillisecond.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_FromUnixTimeStamp.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_GetLastDayTimeOfWeek.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_HasBetween.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_HasTimePart.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_RemoveSecond.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_StartOfDayTime.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DateTime_ToUnixTimeStamp.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DaysOfTheWeek_FromString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\DaysOfTheWeek_ToString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Exception_BuildInvalidArgument.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Exception_BuildMessage.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Exception_BuildMessageParam4.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Exception_InvalidArgumentName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatCardNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatEmail.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatMessage.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatMobileNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatNationalNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatNumeric.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatParam.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_FormatPostalCode.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_RedactCardNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_RedactMobileNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Formatter_RemoveLikeInjection.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Function_List.sql" />
+    <None Include="Programmable Objects\dsp\Functions\GetTemporalTablesList.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Int_Max.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Int_Min.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Json_Getproperties.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Json_GetSelectScript.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Log_$CheckFilters.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Log_FormatMessage.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Log_FormatMessage2.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Log_IsEnabled.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Message_CommonExceptionFormat.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Metadata_ExtendedPropertyValueOfSchema.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Metadata_IsObjectExists.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Metadata_SystemTypeName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsChanged.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSet.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSetBase.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSetForMaxSize.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSetOrNotNull.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSetOrNotNullString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Param_IsSetString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Path_RemoveExtension.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Server_ServerNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Setting_SystemUserId.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Setting_VersioningSchemaName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\SplitString.sql" />
+    <None Include="Programmable Objects\dsp\Functions\SplitStringByIndex.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_FilterByApiKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_InvokeStoreProcedureName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_List.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_MaxKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_Metadata.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_NameByApiKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_NewVersion.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_Params.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoredProcedure_VersionNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StoreProcedure_MaxVersionNumber.sql" />
+    <None Include="Programmable Objects\dsp\Functions\String_IsContain.sql" />
+    <None Include="Programmable Objects\dsp\Functions\String_RemoveWhitespaces.sql" />
+    <None Include="Programmable Objects\dsp\Functions\String_RemoveWhitespacesBig.sql" />
+    <None Include="Programmable Objects\dsp\Functions\String_ReplaceEnter.sql" />
+    <None Include="Programmable Objects\dsp\Functions\StringTable_Value.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Synonym_ObjectExists.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_ExtendedProperty.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_GetExtendedPropertyValueByKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_GetForeignKeys.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_GetParamsJson.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_GetPrimaryKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_GetTransactionalTableWithoutCreatedTime.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_HasIdentityColumn.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_HasPrimaryKey.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_HasTemporalAttributes.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_IndexName.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_ListBaseOnExtendedProperty.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Table_Params.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Util_IsEqual.sql" />
+    <None Include="Programmable Objects\dsp\Functions\Validate_IsValidEmail.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Audit_Error.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Audit_Trace.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Audit_Warning.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_$ValidatePagination.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_Create.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_CreateSystem.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_GetProps.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_SetProps.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Context_Verify.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Crypt_CreatePassword.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Database_InitInMemoryDatabase.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Database_StoredProcedures.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Database_Tables.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\DatabaseVersioning_Refresh.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Exception_ThrowWithCommonFormat.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$Cleanup.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$CreateCommonExceptions.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$ImpCleanup.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$IncreaseAppVersion.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$InitSettings.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$RecreateExceptionFunctions.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$RecreateStringFunctions.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$SetUp.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_$Start.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_Cleanup.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_FillData.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_FillExceptions.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_FillLookups.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_FillSystemTableData.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_NewAppVersion.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_RecreateEnumFunctions.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_SystemTable.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Init_TemporalTables.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Job_Create.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Job_Delete.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Json_Compare.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Json_ReadWithColumns.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Lock_Create.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Lock_IsHold.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Lock_Release.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_AddFilter.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Disable.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Enable.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Error.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Filter.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_RemoveFilter.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Trace.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_TraceTime.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Log_Warn.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Schema_DropObjects.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_Decimal.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_Float.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_Int.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_Money.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_String.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\SetIfChanged_Time.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Setting_$IncreaseAppVersion.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Setting_GetProps.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Setting_SetProps.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\StoredProcedure_AssignKey.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\StoredProcedure_CreateTempCopy.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\StoredProcedure_MakeOldVersion.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\StoredProcedure_SetCreatedTime.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\StoredProcedure_Signature.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\String_CreateRandom.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\String_Tokenize.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Synonym_Create.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_$CreateTemporalStage.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_CompareData.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_DeleteRecords.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_DisableTemporalAttribute.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_EnableTemporalAttribute.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_GetMaxPrimaryKeyValue.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_InitTemporal.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_LastVersioningEndTime.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_UpdateToUseBlobForFields.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_ValidateExistance.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Table_ValidateExtendedPropertyValueByKey.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\TableVersioning_CheckWithSource.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowAppException.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowException.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowFail.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowFatalError.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowGeneralException.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowInvalidArgument.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\ThrowInvalidOperation.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\User_UserIdByAuthUserId.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Util_ProtectProductionEnvironment.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Util_VerifyServerName.sql" />
+    <None Include="Programmable Objects\dsp\Stored Procedures\Validate_CheckNotNull.sql" />
+    <None Include="Programmable Objects\dsp\Views\vw_SystemTable.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\ObjectType_Role.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\ObjectType_System.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\ObjectType_User.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\Role_HasUser.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\SecurityDescriptor_Parents.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\SecurityDescriptor_Roles.sql" />
+    <None Include="Programmable Objects\dspAuth\Functions\SecurityDescriptor_UserPermissions.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Context_Permissions.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Init_Cleanup.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_AddUser.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_Create.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_Delete.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_GetProps.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_RemoveUser.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Role_SetProps.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_AddParent.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_AddRolePermission.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_AddUserPermission.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_Create.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_GetProps.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_IsParentOf.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_RemoveRolePermission.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_RemoveUserPermission.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_SecurityDescriptorByObject.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\SecurityDescriptor_UserPermissionObject.sql" />
+    <None Include="Programmable Objects\dspAuth\Stored Procedures\Validate_CheckAccess.sql" />
+    <None Include="Programmable Objects\dspAuth\Views\vw_RolePermission.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\Exception_DspFailErrorId.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\Exception_ProductionEnvironmentId.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_AddressNotRegistered.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_CustomConfirmFailed.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_CustomConfirmNotActive.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_ExecResponseProcedureFaild.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_InProcess.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_NotProcessed.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_Processed.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_ProcessedFailed.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\InboxMessageProcessState_ProcessedNotPair.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternSeprator_AT.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternSeprator_Blank.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternSeprator_DollorSign.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternSeprator_Sharp.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternSeprator_Star.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStateId_Canceled.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStateId_Drafted.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStateId_Paused.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStateId_Started.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_DoCheckConfirmActivation.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_DoRun.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_InputOutputParam.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_InputParam.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_OutputParam.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\MessagePatternStepType_SendMessage.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\ProviderType_Email.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\ProviderType_SMS.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\ReferenceTime.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestIntervalType_Day.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestIntervalType_DayOfWeek.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestIntervalType_Hour.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestIntervalType_Minute.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessResultObjectPattern.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessStatus_DisableBySetting.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessStatus_Fail.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessStatus_InProgress.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessStatus_NotProcess.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestProcessStatus_Success.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestRuleObjectPattern.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\RequestType_Test.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\Table_IsTemporalHistory.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\TemporalType_Lookup.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\TemporalType_Ordinary.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\TemporalType_Temporal.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\TemporalType_Transactional.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\WaitForReplyMessageState_Expired.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\WaitForReplyMessageState_NotProcess.sql" />
+    <None Include="Programmable Objects\dspconst\Functions\WaitForReplyMessageState_Processed.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\AccessDeniedOrObjectNotExistsId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\AmbiguousExceptionId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\ArgumentsAreNotSameId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\AuthUserNotFoundId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\BatchIsNotAllowedId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\DuplicateRequestExceptionId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\Error1Id.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\Error2Id.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\FatalErrorId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\GeneralExceptionId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\HasNotSameStrcutreId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\InvalidArgumentId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\InvalidCaptchaId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\InvalidOperationId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\InvalidParamSignatureId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\InvokerAppVersionId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\LockFailedId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\MaintenanceId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\MaintenanceReadOnlyId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\NoOperationId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\NotImplemetedId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\NotSupportedId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\ObjectAlreadyExistsId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\ObjectIsInUseId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\PageSizeTooLargeId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\ProductionEnvinronmentIsTurnedOnId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\TooManyRequestId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\UnHandledExceptionId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\UserIsDisabledId.sql" />
+    <None Include="Programmable Objects\dsperr\Functions\ValidationErrorId.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowAmbiguousException.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowArgumentsAreNotSame.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowAuthUserNotFound.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowBatchIsNotAllowed.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowDuplicateRequestException.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowError1.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowError2.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowFatalError.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowGeneralException.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowHasNotSameStrcutre.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowInvalidArgument.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowInvalidCaptcha.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowInvalidOperation.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowInvalidParamSignature.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowInvokerAppVersion.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowLockFailed.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowMaintenance.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowMaintenanceReadOnly.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowNoOperation.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowNotImplemeted.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowNotSupported.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowObjectAlreadyExists.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowObjectIsInUse.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowPageSizeTooLarge.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowProductionEnvinronmentIsTurnedOn.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowTooManyRequest.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowUnHandledException.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowUserIsDisabled.sql" />
+    <None Include="Programmable Objects\dsperr\Stored Procedures\ThrowValidationError.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcess_$AppendToMessageLastData.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcess_$GetMessagePatternIdByCoding.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_ConfirmValue.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_NullExpression.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessKeyTag_ParameterSpecification.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_DefaultValue.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_RandomNumber.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\InboxMessageProcessSendMessageTag_RandomString.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\MessageLastData_ReadJson.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\MessagePattern_Search.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Functions\MessagePatternStep_HasCustomConfirmValidation.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessage_CreateBulk.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessage_Refresh.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$CheckCustomConfirmValueActivation.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$CreateWaitForReplyMessage.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$DoRunResponseProcedure.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetAppropriatePatternId.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetCustomValue.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetMessagePatternIdByWaitForReply.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$GetNextBulk.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessCheckConfirmActivationStep.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessConfirmStep.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessInputOutputStep.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessItem.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessItems.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessNotRegisteredAddress.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessSendMessageStep.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ProcessSteps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$SendReplyMessage.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$SetState.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_$ValidateCustomConfirmValue.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\InboxMessageProcess_Refresh.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\Init_$InitSettings.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\Init_FillLookups.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\Message_$BuildByDynamicExpression.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_$MessagePatternStepItems.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_$Validate.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_Create.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_Delete.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_DeleteMessagePatternSteps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_GetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePattern_SetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_$Validate.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_Create.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_CreateBulk.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_CreateCheckConfirmActivationStep.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\MessagePatternStep_GetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\ProviderInfo_GetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\Setting_GetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Stored Procedures\Setting_SetProps.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Views\vw_MessagePattern.sql" />
+    <None Include="Programmable Objects\dspInboxMessage\Views\vw_ProviderInfo.sql" />
+    <None Include="Programmable Objects\dspstr\Functions\String1.sql" />
+    <None Include="Programmable Objects\dspstr\Functions\String2.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\AssertEquals.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\AssertEqualsJsonWithValue.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\AssertEqualsString.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\AssertNotEquals.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\Fail.sql" />
+    <None Include="Programmable Objects\dsptest\Stored Procedures\ThrowFail.sql" />
+    <None Include="Programmable Objects\err\Functions\AccessDeniedOrObjectNotExistsId.sql" />
+    <None Include="Programmable Objects\err\Functions\AmbiguousExceptionId.sql" />
+    <None Include="Programmable Objects\err\Functions\AuthUserNotFoundId.sql" />
+    <None Include="Programmable Objects\err\Functions\BatchIsNotAllowedId.sql" />
+    <None Include="Programmable Objects\err\Functions\DuplicateRequestExceptionId.sql" />
+    <None Include="Programmable Objects\err\Functions\Error1Id.sql" />
+    <None Include="Programmable Objects\err\Functions\Error2Id.sql" />
+    <None Include="Programmable Objects\err\Functions\FatalErrorId.sql" />
+    <None Include="Programmable Objects\err\Functions\GeneralExceptionId.sql" />
+    <None Include="Programmable Objects\err\Functions\InvalidArgumentId.sql" />
+    <None Include="Programmable Objects\err\Functions\InvalidCaptchaId.sql" />
+    <None Include="Programmable Objects\err\Functions\InvalidOperationId.sql" />
+    <None Include="Programmable Objects\err\Functions\InvalidParamSignatureId.sql" />
+    <None Include="Programmable Objects\err\Functions\InvokerAppVersionId.sql" />
+    <None Include="Programmable Objects\err\Functions\LockFailedId.sql" />
+    <None Include="Programmable Objects\err\Functions\MaintenanceId.sql" />
+    <None Include="Programmable Objects\err\Functions\MaintenanceReadOnlyId.sql" />
+    <None Include="Programmable Objects\err\Functions\NoOperationId.sql" />
+    <None Include="Programmable Objects\err\Functions\NotImplemetedId.sql" />
+    <None Include="Programmable Objects\err\Functions\NotSupportedId.sql" />
+    <None Include="Programmable Objects\err\Functions\ObjectAlreadyExistsId.sql" />
+    <None Include="Programmable Objects\err\Functions\ObjectIsInUseId.sql" />
+    <None Include="Programmable Objects\err\Functions\PageSizeTooLargeId.sql" />
+    <None Include="Programmable Objects\err\Functions\TooManyRequestId.sql" />
+    <None Include="Programmable Objects\err\Functions\UserIsDisabledId.sql" />
+    <None Include="Programmable Objects\err\Functions\ValidationErrorId.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowAccessDeniedOrObjectNotExists.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowAmbiguousException.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowAuthUserNotFound.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowBatchIsNotAllowed.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowDuplicateRequestException.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowError1.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowError2.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowFatalError.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowGeneralException.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowInvalidArgument.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowInvalidCaptcha.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowInvalidOperation.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowInvalidParamSignature.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowInvokerAppVersion.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowLockFailed.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowMaintenance.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowMaintenanceReadOnly.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowNoOperation.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowNotImplemeted.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowNotSupported.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowObjectAlreadyExists.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowObjectIsInUse.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowPageSizeTooLarge.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowTooManyRequest.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowUserIsDisabled.sql" />
+    <None Include="Programmable Objects\err\Stored Procedures\ThrowValidationError.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Ad hoc distributed queries.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Agent Service.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Auto close.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Auto create statistics.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Auto Shrink.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Auto update statistics.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Buffer cache hit ratio.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Column collation does not match database default.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Column data types (Numeric vs. Int).sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Column Name Problems.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Columns of data type Text_nText.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Columns with float data type.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Columns with image data type.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Compatibility Level.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Database and Log files on the same disk.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Database collation.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Database Mail.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Decimal Size Problem.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Forwarded Records.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Fragmented Indexes.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Instant File Initialization.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Login Language.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Max degree of parallelism.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Missing Foreign Key Indexes.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Missing Foreign Keys.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Old Backups.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Ole Automation Procedures.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Orphaned Users.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Page life expectancy.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures Named SP_.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures that call undocumented procedures.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures using dynamic SQL without sp_executesql.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures with @@Identity.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures With SET ROWCOUNT.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Procedures without SET NOCOUNT ON.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Service Account.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test SMO and DMO.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Table name problems.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Tables that start with tbl.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Tables without a primary key.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Tables without any data.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test UniqueIdentifier with NewId.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Unnamed Constraints.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test User Aliases.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Varchar Size Problem.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Views with order by.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test Wide Table.sql" />
+    <None Include="Programmable Objects\SQLCop\Stored Procedures\test xp_cmdshell is enabled.sql" />
+    <None Include="Programmable Objects\str\Functions\String1.sql" />
+    <None Include="Programmable Objects\str\Functions\String2.sql" />
+    <None Include="Programmable Objects\tClass\Stored Procedures\test Log_Create.sql" />
+    <None Include="Programmable Objects\tClass\Stored Procedures\test Log_Filter.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\Private_ColumnsWithBigintTypes.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\Private_CompareConstFunctionReturnValueWithScriptValue.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test All Parameters should be used in Procedure.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test API must have Context TCONTEXT OUT.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test API must have Context_Verify.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test API must have WITH EXECUTE AS OWNER.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test const Functions must have WITH SCHEMABINDING.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test DataAccessMode annotation existance in proc.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test dbo should not have WITH EXECUTE AS OWNER.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Declare BIGINT.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Declare generic types INT, TSTRING.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Description must be nvarchar(max).sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with dsptest schema which not in test functioncs- for existing functions.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with dsptest schema which not in test Functioncs.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with tSQLt schema in test functioncs- for existing functions.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Find functions with tSQLt schema in test functioncs.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test None of tests should have RETURN phrase.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Pagination.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Relations for ForeignKeys.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Table with IsDeleted Field must have vw... View &amp; ..._GetProps Procedure.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test ValidateSubstitutionOfFunctioncallWithInteger.sql" />
+    <None Include="Programmable Objects\tCodeQuality\Stored Procedures\test Wrong use of Private class.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\F_Num.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\GetTestResultFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Info.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_Bin2Hex.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_FindConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetCleanObjectName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetCleanSchemaName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetCommaSeparatedColumnList.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetConfiguration.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetConstraintType.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetDataTypeOrComputedColumnDefinition.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetDefaultConstraintDefinition.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetExternalAccessKeyBytes.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetForeignKeyDefinition.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetForeignKeyParColumns.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetForeignKeyRefColumns.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetFullTypeName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetIdentityDefinition.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetLastTestNameIfNotProvided.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetOriginalTableInfo.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetOriginalTableName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetQuotedFullName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetQuotedTableNameForConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetSchemaId.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_GetUniqueConstraintDefinition.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_IsTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_QuoteClassNameForNewTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ResolveApplyConstraintParameters.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ResolveFakeTableNamesForBackwardCompatibility.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ResolveName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ResolveObjectName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ResolveSchemaName.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_ScriptIndex.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_SqlVariantFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\Private_SqlVersion.sql" />
+    <None Include="Programmable Objects\tSQLt\Functions\TestCaseSummary.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\ApplyConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\ApplyTrigger.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertEmptyTable.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertEquals.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertEqualsString.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertEqualsTable.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertEqualsTableSchema.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertLike.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertNotEquals.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertObjectDoesNotExist.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertObjectExists.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertResultSetsHaveSameMetaData.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\AssertStringIn.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\CaptureOutput.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\DefaultResultFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\DropClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\EnableExternalAccess.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\ExpectException.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\ExpectNoException.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Fail.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\FakeFunction.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\FakeTable.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\GetNewTranName.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\InstallExternalAccessKey.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\LogCapturedOutput.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\NewConnection.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\NewTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\NullTestResultFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ApplyCheckConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ApplyForeignKeyConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ApplyUniqueConstraint.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CleanTestResult.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CompareTables.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CompareTablesFailIfUnequalRowsExists.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CreateFakeFunction.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CreateFakeOfTable.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CreateProcedureSpy.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_CreateResultTableForCompareTables.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_DisallowOverwritingNonTestSchema.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_GetCursorForRunAll.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_GetCursorForRunNew.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_GetSetupProcedureName.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_Init.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_InputBuffer.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_MarkFakeTable.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_MarkObjectBeforeRename.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_MarkSchemaAsTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_OutputTestResults.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_Print.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_PrintXML.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RemoveSchemaBinding.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RemoveSchemaBoundReferences.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RenameObjectToUniqueName.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RenameObjectToUniqueNameUsingObjectId.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ResetNewTestClassList.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_Run.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunAll.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunCursor.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunMethodHandler.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunNew.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunTest.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_RunTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_SaveTestNameForSession.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_SetConfiguration.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_SetFakeViewOff_SingleView.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_SetFakeViewOn_SingleView.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ValidateFakeTableParameters.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ValidateObjectsCompatibleWithFakeFunction.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ValidateProcedureCanBeUsedWithSpyProcedure.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Private_ValidateThatAllDataTypesInTableAreSupported.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RemoveExternalAccessKey.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RemoveObject.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RemoveObjectIfExists.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RenameClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Reset.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\ResultSetFilter.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Run.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunAll.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunC.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunNew.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunTest.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunTestClass.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunWithNullResults.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\RunWithXmlResults.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SetFakeViewOff.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SetFakeViewOn.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SetTestResultFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SetVerbose.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SpyProcedure.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\StubRecord.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\SuppressOutput.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\TableToText.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\Uninstall.sql" />
+    <None Include="Programmable Objects\tSQLt\Stored Procedures\XmlResultFormatter.sql" />
+    <None Include="Programmable Objects\tSQLt\Views\Private_SysIndexes.sql" />
+    <None Include="Programmable Objects\tSQLt\Views\Private_SysTypes.sql" />
+    <None Include="Programmable Objects\tSQLt\Views\TestClasses.sql" />
+    <None Include="Programmable Objects\tSQLt\Views\Tests.sql" />
+    <None Include="Schema-Model\Assemblies\tSQLtCLR.sql" />
+    <None Include="Schema-Model\DatabaseVersioning\Tables\Setting.sql" />
+    <None Include="Schema-Model\DatabaseVersioning\Tables\TemporalType.sql" />
+    <None Include="Schema-Model\dbo\Tables\Application.sql" />
+    <None Include="Schema-Model\dbo\Tables\AuthUser.sql" />
+    <None Include="Schema-Model\dbo\Tables\Logs.sql" />
+    <None Include="Schema-Model\dbo\Tables\Setting.sql" />
+    <None Include="Schema-Model\dbo\Tables\Users.sql" />
+    <None Include="Schema-Model\dsp\Tables\AppVersion.sql" />
+    <None Include="Schema-Model\dsp\Tables\AppVersionDetail.sql" />
+    <None Include="Schema-Model\dsp\Tables\AuthUser.sql" />
+    <None Include="Schema-Model\dsp\Tables\AuthUserHistory.sql" />
+    <None Include="Schema-Model\dsp\Tables\Exception.sql" />
+    <None Include="Schema-Model\dsp\Tables\LogFilterSetting.sql" />
+    <None Include="Schema-Model\dsp\Tables\LogUser.sql" />
+    <None Include="Schema-Model\dsp\Tables\Setting.sql" />
+    <None Include="Schema-Model\dsp\Tables\StringTable.sql" />
+    <None Include="Schema-Model\dsp\Tables\SystemTable.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\ObjectType.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\Permission.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\PermissionGroup.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\PermissionGroupPermission.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\Role.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\RoleUser.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\SecurityDescriptor.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\SecurityDescriptorParent.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\SecurityDescriptorRolePermission.sql" />
+    <None Include="Schema-Model\dspAuth\Tables\SecurityDescriptorUserPermission.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\InboxMessage.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\InboxMessageProcessState.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\InboxMessage_LastRefershInboxMessageNumber.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\MessagePattern.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\MessagePatternSeprator.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\MessagePatternState.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\MessagePatternStep.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\MessagePatternStepType.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\Provider.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\ProviderInfo.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\ProviderType.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\Setting.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\WaitForReplyMessage.sql" />
+    <None Include="Schema-Model\dspInboxMessage\Tables\WaitForReplyMessageState.sql" />
+    <None Include="Schema-Model\Security\Roles\ApiCallers.sql" />
+    <None Include="Schema-Model\Security\Schemas\api.sql" />
+    <None Include="Schema-Model\Security\Schemas\const.sql" />
+    <None Include="Schema-Model\Security\Schemas\DatabaseVersioning.sql" />
+    <None Include="Schema-Model\Security\Schemas\dsp.sql" />
+    <None Include="Schema-Model\Security\Schemas\dspAuth.sql" />
+    <None Include="Schema-Model\Security\Schemas\dspconst.sql" />
+    <None Include="Schema-Model\Security\Schemas\dsperr.sql" />
+    <None Include="Schema-Model\Security\Schemas\dspInboxMessage.sql" />
+    <None Include="Schema-Model\Security\Schemas\dspRequest.sql" />
+    <None Include="Schema-Model\Security\Schemas\dspstr.sql" />
+    <None Include="Schema-Model\Security\Schemas\dsptest.sql" />
+    <None Include="Schema-Model\Security\Schemas\dsptUtil.sql" />
+    <None Include="Schema-Model\Security\Schemas\err.sql" />
+    <None Include="Schema-Model\Security\Schemas\request.sql" />
+    <None Include="Schema-Model\Security\Schemas\SQLCop.sql" />
+    <None Include="Schema-Model\Security\Schemas\str.sql" />
+    <None Include="Schema-Model\Security\Schemas\syn.sql" />
+    <None Include="Schema-Model\Security\Schemas\tClass.sql" />
+    <None Include="Schema-Model\Security\Schemas\tCodeQuality.sql" />
+    <None Include="Schema-Model\Security\Schemas\tSQLt.sql" />
+    <None Include="Schema-Model\Security\Schemas\tUtil.sql" />
+    <None Include="Schema-Model\syn\Synonyms\MessageServer_InboxMessageList.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\CaptureOutputLog.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_AssertEqualsTableSchema_Actual.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_AssertEqualsTableSchema_Expected.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_Configurations.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_ExpectException.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_NewTestClassList.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_NullCellTable.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Private_RenamedObjectLog.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\Run_LastExecution.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\TestMessage.sql" />
+    <None Include="Schema-Model\tSQLt\Tables\TestResult.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\TBIGSTRING.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\TCONTEXT.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\TJSON.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\TSTRING.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\TSTRINGA.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\ud_Id.sql" />
+    <None Include="Schema-Model\dbo\Types\User-defined Data Types\ud_LogFilter.sql" />
+    <None Include="Schema-Model\tSQLt\Types\User-defined Data Types\AssertStringTable.sql" />
+    <None Include="Schema-Model\tSQLt\Types\User-defined Data Types\Private.sql" />
+    <None Include="Unsupported\Functions\Formatter_FormatString.sql" />
+    <None Include="Unsupported\Functions\Json_ReadNested.sql" />
+    <None Include="Unsupported\Functions\MessagePatternStepType_Confirm.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pre-Deployment\01_Initialize_Deployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Post-Deployment\01_Finalize_Deployment.sql" />
+  </ItemGroup>
+</Project>

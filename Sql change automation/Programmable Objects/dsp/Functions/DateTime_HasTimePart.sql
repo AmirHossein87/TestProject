@@ -1,0 +1,17 @@
+IF OBJECT_ID('[dsp].[DateTime_HasTimePart]') IS NOT NULL
+	DROP FUNCTION [dsp].[DateTime_HasTimePart];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+create FUNCTION [dsp].[DateTime_HasTimePart] (@Time DATETIME)
+RETURNS BIT
+AS
+BEGIN
+	RETURN IIF(@Time = CAST(@Time AS DATE), 0, 1);
+END;
+
+
+GO

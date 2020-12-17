@@ -1,0 +1,14 @@
+IF OBJECT_ID('[tSQLt].[NullTestResultFormatter]') IS NOT NULL
+	DROP PROCEDURE [tSQLt].[NullTestResultFormatter];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [tSQLt].[NullTestResultFormatter]
+AS
+BEGIN
+  RETURN 0;
+END;
+GO

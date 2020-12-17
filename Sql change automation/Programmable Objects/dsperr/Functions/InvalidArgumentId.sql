@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[InvalidArgumentId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[InvalidArgumentId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[InvalidArgumentId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55006;  
+END
+			
+GO

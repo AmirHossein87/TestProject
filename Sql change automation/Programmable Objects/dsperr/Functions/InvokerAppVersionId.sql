@@ -1,0 +1,18 @@
+IF OBJECT_ID('[dsperr].[InvokerAppVersionId]') IS NOT NULL
+	DROP FUNCTION [dsperr].[InvokerAppVersionId];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [dsperr].[InvokerAppVersionId]()
+RETURNS INT 
+WITH SCHEMABINDING
+AS
+BEGIN
+	RETURN 55020;  
+END
+			
+GO

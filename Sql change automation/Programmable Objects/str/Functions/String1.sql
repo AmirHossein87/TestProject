@@ -1,0 +1,16 @@
+IF OBJECT_ID('[str].[String1]') IS NOT NULL
+	DROP FUNCTION [str].[String1];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE FUNCTION [str].[String1]() 
+RETURNS TSTRING
+AS 
+BEGIN
+	RETURN dsp.StringTable_Value('String1');
+END
+GO

@@ -1,0 +1,15 @@
+IF OBJECT_ID('[dsp].[Path_RemoveExtension]') IS NOT NULL
+	DROP FUNCTION [dsp].[Path_RemoveExtension];
+
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dsp].[Path_RemoveExtension] (
+	@Path TSTRING)
+RETURNS TSTRING
+BEGIN
+	RETURN LEFT(@Path, LEN(@Path) - CHARINDEX('.', REVERSE(@Path)));
+END;
+GO
